@@ -22,7 +22,7 @@ while(!loggedIn) {
     let username = prompt('Username:');
     let password = prompt('Password:');
 
-    if (username == 'samy123' && password == '12345' && loginAttempt <=5) {
+    if (username == 'samy123' && password == '12345' && loginAttempt <= 5) {
         alert('Welcome back, ' + username);
         loggedIn = true;
     } else {
