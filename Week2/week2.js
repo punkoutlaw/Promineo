@@ -57,28 +57,63 @@ if((username === 'Tommy123' && password === '12345') || (username == 'Timmy456' 
 // 7-8 will be Middle
 // 9 will be Freshman, 10 Sophomore, 11 Junior, 12 Senior
 // Anything other than these values will return "Error" to the console
+let studentGrade = 10;
+let studentClass;
 
-
-
-
+switch(studentGrade){
+    case 'K':
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+        studentClass = "Elementary";
+        break;
+    case 7:
+    case 8:
+        studentClass = "Middle";
+        break;
+    case 9:
+        studentClass = "Freshman";
+        break;
+    case 10:
+        studentClass = "Sophomore";
+        break;
+    case 11:
+        studentClass = "Junior";
+        break;
+    case 12:
+        studentClass = "Senior";
+        break;
+    default: 
+         console.log("Error");
+}
+console.log(studentClass);
 
 // write a for loop that will iterate backwards from 10 to -10
-
-
+for (let i = 10; i >= -10; i--) {
+console.log(i);
+}
 
 // write a do/while loop that prints 1 through 50
-
+let i = 1;
+do {
+    console.log(i);
+    i++;
+} while(i <= 50);
 
 // edit the previous do/while loop so that it prints the remainder when the loop number is divided by 4
-
+ do {
+     console.log(i % 4);
+     i++;
+ } while(1 <= 50);
 
 // Someone messed up the following for loop
 // fix the following infinite loop, uncomment to test
-/* 
-    for(let i = 11; i > 10; i++){
-        console.log(i);
-    } 
-*/
+
+for (let i = 1; i < 10; i++) {
+console.log(i);
+}
 
 
 
