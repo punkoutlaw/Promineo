@@ -8,3 +8,9 @@ while (i < 8) {
   console.log("Hello David!");
   i++;
 }
+
+var i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 8);
