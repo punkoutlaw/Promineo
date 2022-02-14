@@ -46,3 +46,18 @@ for (i in names) {
 for (name of names) {
     console.log(name);
 }
+
+// Check to see if userNumber is between 1 and 100. 
+// If it is, create a while loop that prints all integers starting with userNumber to 100.
+// If not, print "Your number was not between 1 and 100."
+
+var userNumber;
+
+var counter = userNumber;
+if ( userNumber <= 100 && userNumber >= 1 ) {
+    while ( counter <= 100 ) {
+        console.log(counter++);
+    }
+} else {
+    console.log("Your number was not between 1 and 100.");
+}
