@@ -177,13 +177,17 @@ var pointsReset = false;
 var turns
 var score
 
-var turns
-var score
-
-for (turns = 0; turns <= 100; turns += 3) {
-    if(turns % 3 === 0){
-        console.log('Turns: ' + turns);
+for(var i = 0; i < 100 && points < 290; i++){
+    if(points == 125 && pointsReset === false){
+        points = 25;
+        pointsReset = true;
+    } else if(i % 2 === 0){
+        points = points + 5;
+    } else {
+        points = points + 3;
     }
+    
+    console.log("Turns: " + i + " Score: " + points)
 }
 
 
@@ -220,5 +224,15 @@ do {
 // 1 x 9 = 9
 // 1 x 10 = 10
 
-var num = 0;
+var num = 3;
+
+for(i = 1; i <= 10; i++){
+    console.log("%d x %d = %d", num, i, (num*i));
+ }
+
+ // The above code can also be written as:
+
+ for(var i=1; i<=10; i++) {
+    console.log(num +" x " + i + " = " + (num*i) );
+}
 

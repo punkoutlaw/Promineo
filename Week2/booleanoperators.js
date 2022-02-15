@@ -39,3 +39,11 @@ console.log(a > b || (b && c > d));
 var age = 120;
 
 console.log(age >= 16);
+
+// Determine if var1 is not equal to var2. Print the result to the console using console.log().
+// The not equal to operator is !=
+
+var var1 = input;
+var var2 = input;
+
+console.log(var1 != var2);
