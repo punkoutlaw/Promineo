@@ -205,4 +205,20 @@ do {
     userNumber = userNumber + 6;
 } while(userNumber <= 100);
 
-console.log(35 + "20");
+
+// Create a for loop that prints out a multiplication table for num from 1 through 10 as follows (the value of num will be input by the user):
+// If a user enters 1, the console should print the following:
+
+// 1 x 1 = 1
+// 1 x 2 =2
+// 1 x 3 = 3
+// 1 x 4 = 4
+// 1 x 5 = 5
+// 1 x 6 = 6
+// 1 x 7 = 7
+// 1 x 8 = 8
+// 1 x 9 = 9
+// 1 x 10 = 10
+
+var num = 0;
+
