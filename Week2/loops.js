@@ -51,6 +51,17 @@ for (name of names) {
 // If it is, create a while loop that prints all integers starting with userNumber to 100.
 // If not, print "Your number was not between 1 and 100."
 
+// My answer:
+
+// for (let i = userNumber; i <= 100; i++) {
+//     console.log(i);
+//     while (i > 100) {
+//         console.log('Your number was not between 1 and 100.');
+//     }
+// }
+
+// Correct answer:
+
 var userNumber;
 
 var counter = userNumber;
@@ -60,4 +71,117 @@ if ( userNumber <= 100 && userNumber >= 1 ) {
     }
 } else {
     console.log("Your number was not between 1 and 100.");
+}
+
+// Write a for loop that prints the numbers 0 to x. 
+// The x has been initialized for you and will be based on a user's input.
+
+// My answer:
+
+var x = 14;
+
+let userInput = 0;
+
+while (userInput <= x) {
+    console.log(userInput);
+    userInput++;
+}
+
+// The above code can also be written as:
+
+for ( var i = 0; i <= x; ++i ) {
+    console.log(i);
+}
+
+// NOTE: By using i++, the increment operator increments and returns the value before incrementing.
+
+
+// Using the supplied variables, create a loop of your choice that will add cups of rice to a bowl. 
+//Each time a cup of rice is added, print "The bowl contains X cups of rice.", where X is the number of cups added. 
+// Once the number of cups called for has been reached, print "We have enough rice!".
+
+// Note, we don't need to know if the bowl is empty.
+
+var requiredCupsOfRice = 5;
+var currentCupsOfRice = 1;
+
+while (currentCupsOfRice <= requiredCupsOfRice) {
+    console.log('The bowl contains ' + currentCupsOfRice + ' cups of rice.');
+    currentCupsOfRice++;
+}
+console.log('We have enough rice!');
+
+// The above code can also be written as:
+
+var requiredCupsOfRice = 5;
+var currentCupsOfRice = 0;
+
+while(currentCupsOfRice != requiredCupsOfRice){
+    console.log('The bowl contains ' + (++currentCupsOfRice) + ' cups of rice.');
+}
+console.log('We have enough rice!');
+
+// Would the following block of code give us the same outcome?
+
+var requiredCupsOfRice = 5;
+var currentCupsOfRice = 1;
+
+do {
+    console.log('The bowl contains ' + currentCupsOfRice++ + ' cups of rice');
+} while (currentCupsOfRice !== requiredCupsOfRice);
+
+console.log('We have enough rice!');
+
+// The answer is: NO
+
+// Write a for loop that prints every third number from 0 up to, and including, 99.
+// My answer:
+
+for (let i = 0; i <= 99; i++) {
+    if (i % 3 == 0) {
+        console.log(i);
+    }
+}
+
+// The above code can also be written as:
+
+for(var i = 0; i <= 99; i++){
+    if(i % 3 === 0){
+        console.log(i)
+    }
+}
+
+// Will the following code return the same results?
+
+var i = 0;
+do{ 
+    if(i % 3 === 0) {
+        console.log(i);
+    }
+    i++;
+}
+while (i <=99)
+
+// The answer is: YES
+
+
+// Let's play a game. The game will consist of 100 turns. 
+// If the number of turns is even, you gain 5 points. 
+// If it's odd, you gain 3 points. If ever your score is equal to 125, you are reset back to 25 points. 
+// This will only be allowed to happen once. 
+// The game ends if you are able to make it through 100 turns or you reach more than 290 points, whichever comes first.
+// Using a for loop, create the game.
+
+var points = 0;
+var pointsReset = false;
+var turns
+var score
+
+var turns
+var score
+
+for (turns = 0; turns <= 100; turns += 3) {
+    if(turns % 3 === 0){
+        console.log('Turns: ' + turns);
+    }
 }
