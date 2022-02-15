@@ -205,3 +205,4 @@ do {
     userNumber = userNumber + 6;
 } while(userNumber <= 100);
 
+console.log(35 + "20");
