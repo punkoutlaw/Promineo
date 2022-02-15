@@ -185,3 +185,23 @@ for (turns = 0; turns <= 100; turns += 3) {
         console.log('Turns: ' + turns);
     }
 }
+
+
+// Create a do/while loop that will print the userNumber and then add 6 after each loop. 
+// Stop the loop once the number is greater than or equal to 100.
+
+var userNumber = 50;
+
+var i = userNumber;
+do {
+  console.log(i);
+  i+=6;
+} while (i <= 100);
+
+// The above can also be written as:
+
+do {
+    console.log(userNumber);
+    userNumber = userNumber + 6;
+} while(userNumber <= 100);
+
