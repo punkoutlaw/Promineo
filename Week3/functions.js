@@ -20,5 +20,4 @@ function myFunction() {
     }
 }
 
-myFunction() // Use the to CALL/INVOKE your function!
-
+myFunction(); // Use the to CALL/INVOKE your function!
