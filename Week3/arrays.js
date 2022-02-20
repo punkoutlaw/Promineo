@@ -29,3 +29,23 @@ for (name of customerNames) {
     console.log(name);
 }
 
+// OPENCLASS QUESTIONS
+
+// Write a function called joinArrays that accepts two arrays as arguments. 
+// Join the two arrays and return the new array.
+// You must use a method of the Array object
+
+var input = ['Phillip', 'Eddie', 'Jason', 'Brook'];
+var staticArray = ["Henry", "Peter", "Julie"];
+
+//write your code here
+
+
+function joinArrays(array1, array2) {
+    return array1.concat(array2);
+}
+
+// do not change
+// for testing purposes
+
+console.log(joinArrays(input, staticArray));

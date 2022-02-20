@@ -37,6 +37,11 @@ let sum = ages.reduce(function(startValue, endValue) {
 
 var names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 
+let lengths = names.map(function(element) {
+    return element.length / names.length
+}); console.log(lengths);
+
+
 // 2b:
 
 // Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
