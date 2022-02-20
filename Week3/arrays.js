@@ -27,7 +27,11 @@ for (let i = 0; i < customerNames.length; i++) {
 
 for (name of customerNames) {
     console.log(name);
-}
+};
+
+var ages = [3, 9, 23, 64, 2, 8, 28, 93] // this is your array
+var a = ages[ages.length - 1]; // this is how you access the last element in an array
+var b =  ages[0]; // this is how you access the 1st element in an array
 
 // OPENCLASS QUESTIONS
 

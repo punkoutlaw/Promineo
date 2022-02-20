@@ -7,7 +7,7 @@
 // Print the result to the console.
 
 var ages = [3, 9, 23, 64, 2, 8, 28, 93]
-var a = ages[ages.length-1];
+var a = ages[ages.length - 1];
 var b =  ages[0];
 
 console.log(a - b);
@@ -21,6 +21,9 @@ console.log(ages);
 console.log(a - b);
  
 // 1c:
+
+// Use a loop to iterate through the array and calculate the average age. 
+// Print the result to the console.
 
 let sum = ages.reduce(function(startValue, endValue) {
     return startValue + endValue;
@@ -37,30 +40,29 @@ let sum = ages.reduce(function(startValue, endValue) {
 
 var names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 
-let lengths = names.map(function(element) {
-    return element.length / names.length
-}); console.log(lengths);
-
+var avg = 0
+for (let i = 0; i < names.length; i++) {
+    avg += names[i].length;
+} console.log(avg/names.length);
 
 // 2b:
 
 // Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
 
+console.log(names.join(', '));
 
 // QUESTION 3:
-
-
 // How do you access the last element of any array?
 
-// ANSWER: array[array.length-1]
+
+// ANSWER: array[array.length - 1];
 
 
 // QUESTION 4:
-
-
 // How do you access the first element of any array?
 
-// ANSWER: array[0]
+
+// ANSWER: array[0];
 
 
 // QUESTION 5:
@@ -69,22 +71,25 @@ let lengths = names.map(function(element) {
 // Create a new array called nameLengths. 
 // Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
 
-
-
+let nameLengths = names.map(function(element) {
+    return element.length;
+}); console.log(nameLengths);
 
 // QUESTION 6:
 // Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.
 // Print the result to the console.
 
-
+let total = nameLengths.reduce(function(val1, val2) {
+    return val1 + val2;
+}); console.log(total);
 
 
 // QUESTION 7:
 // Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. 
 
-// function newFunction(word, n) {
-
-// }
+function newFunction(word, n) {
+    
+}
 
 
 // QUESTION 8:
