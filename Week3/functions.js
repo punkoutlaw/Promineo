@@ -141,3 +141,11 @@ function isBlue(var1){
 }
 
 console.log(isBlue(a));
+
+// HOMEWORK QUESTION //
+
+function myFunction(func1, func2) {
+    return func1 + ' ' + func2;
+}
+
+console.log(myFunction('Hello', 'world'));

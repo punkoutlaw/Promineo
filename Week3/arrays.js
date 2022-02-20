@@ -1,5 +1,5 @@
 // Arrays are a data type that allow us to group similar variables together and refer to the values by location.
-// The location of index iz zero based. Which means that the 1st value is located at posisiton 0 and the last will always be located at the index just one less than the length of the array, or the number of elements in the array.
+// The location of index is zero based. Which means that the 1st value is located at posisiton 0 and the last will always be located at the index just one less than the length of the array, or the number of elements in the array.
 
 // Example:
 
