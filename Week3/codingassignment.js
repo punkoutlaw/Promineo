@@ -86,11 +86,19 @@ let total = nameLengths.reduce(function(val1, val2) {
 
 // QUESTION 7:
 // Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. 
+// (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
 
-function newFunction(word, n) {
-    
-}
+function repeat(word, n) {
+    let w3 = word
+    for (let i = 1; i < n; i++)
+    word += w3;
 
+    return word;
+} 
+
+let word = 'Hello';
+let n = 3;
+console.log(repeat(word, n));
 
 // QUESTION 8:
 
@@ -123,15 +131,14 @@ let myTotal = newArray2.reduce(function(startValue2, endValue2) {
 // QUESTION 11
 // Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
 
-var sum1 = yesOrNo
-var sum2 = myTotal
-
-function comparo(ray1, ray2) {
-
-}
+function comparo(sum1, sum2) {
+    return sum1 > sum2;
+} console.log(yesOrNo > myTotal);
 
 // QUESTION 12:
 // Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+
+var isHotOutside = true;
 
 function willBuyDrink (isHotOutside, moneyInPocket) {
 
@@ -143,8 +150,13 @@ function willBuyDrink (isHotOutside, moneyInPocket) {
     {
         return false;
     }
-} console.log(willBuyDrink(true, 25));
+} console.log(willBuyDrink(isHotOutside, 25));
 
 // QUESTION 13:
 // Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
 
+function mySchool(name, location) {
+    return name + ', ' + location;
+} console.log(mySchool('Promineo Tech', 'Online'));
+
+// Created a function that tells you what school you go to and where it is located.
