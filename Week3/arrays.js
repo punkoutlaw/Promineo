@@ -53,3 +53,30 @@ function joinArrays(array1, array2) {
 // for testing purposes
 
 console.log(joinArrays(input, staticArray));
+
+
+// Given the array, studentList, add the name "Mary".
+//Do not edit the array in its current state. You must edit using a method of the Array object.
+
+var a = 1;
+
+
+
+let studentList = ["Allen", "Jessica", "Eddie", "Sarah"]
+//write your code here
+
+studentList.push('Mary');
+
+
+// do not change
+// for testing purposes
+function checkArray(){
+    return studentList.sort()
+}
+
+console.log(checkArray());
+
+
+// Write a function called printArray that accepts an array as an argument. Create a loop that will print each value of the passed in array.
+//Do not edit the array in its current state. You must use a method of the Array object.
+
