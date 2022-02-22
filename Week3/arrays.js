@@ -80,3 +80,60 @@ console.log(checkArray());
 // Write a function called printArray that accepts an array as an argument. Create a loop that will print each value of the passed in array.
 //Do not edit the array in its current state. You must use a method of the Array object.
 
+function printArray(array) {
+    for(let i = 0; i <array.length; i++) {
+        console.log(array[i]);
+    }
+} 
+printArray(input);
+
+
+// Given the array, studentList, remove the name "Eddie".
+//Do not edit the array in its current state. You must edit using a method of the Array object.
+
+// let studentList = ["Allen", "Jessica", "Eddie", "Sarah"];
+// //write your code here
+
+// studentList.splice(2, 1);
+
+// // do not change
+// // for testing purposes
+// function checkArray(array){
+//     return array.sort()
+// }
+
+// console.log(checkArray(studentList));
+
+// Write a function called sortArray that accepts an array as an argument. Within the function, sort the array alphabetically or numerically. Return the sorted array.
+//You must use a method of the Array object
+
+function sortArray(alpha) {
+    return alpha.sort();
+}
+
+// do not change
+// for testing purposes
+
+console.log(sortArray(input));
+
+// Write a function called reverseArray that accepts an array as an argument. Within the function, reverse the array. Return the reversed array.
+//You must use a method of the Array object.
+
+function reverseArray(array) {
+    return array.reverse();
+}
+
+
+// do not change
+// for testing purposes
+
+console.log(reverseArray(input));
+
+// Create an array called groceryList and add "granola", "milk", and "eggs"
+
+var groceryList = ['granola', 'milk', 'eggs'];
+
+
+// do not change below
+// for testing purposes
+console.log(groceryList)
