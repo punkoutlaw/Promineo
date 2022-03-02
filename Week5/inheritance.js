@@ -46,3 +46,5 @@ class CollectionsSender extends NotificationSender {
 
 let collectionsSender = new CollectionsSender('OVERDUE');
 collectionsSender.sendNotification('this is a test collections notification.');
+
+// NOTE // 
