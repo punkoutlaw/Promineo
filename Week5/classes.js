@@ -25,3 +25,5 @@ student2.introduce();
 // When you create an instance of a class, you use the "new" keyword or what's called an "instantiation".
 // Notice, we don't 'call' student.constructor - we would call the name of the class followed by paranthesis.
 // Doing so, this invokes the constructor and creates an instance of the class and runs whatever code is inside your constructor.
+// You need to define a class, make an instance of it, by using the 'new' keyword to actually use it.
+// To make a property accessible without defining it, you need to put 'static' in your code.

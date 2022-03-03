@@ -48,3 +48,5 @@ let collectionsSender = new CollectionsSender('OVERDUE');
 collectionsSender.sendNotification('this is a test collections notification.');
 
 // NOTE // 
+
+// When you extend a class, it will inherit all the classes methods & propertioes.
