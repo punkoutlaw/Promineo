@@ -16,7 +16,7 @@ class Player {
 class Team {
     constructor(name) {
         this.name = name;
-        this.players = []; // each time we create a team, we will crate a new array that holda all the players on that tean
+        this.players = []; // each time we create a team, we will crate a new array that holds all the players on that team.
     }
 
     addPlayer(player) {
@@ -73,7 +73,7 @@ class Menu {
             02 view team
             03) delete team
             04) display all teams
-        `); // this is our method to show meno options
+        `); // this is our method to show the menu options
     }
 
     showTeamMenuOptions(teamInfo) {
