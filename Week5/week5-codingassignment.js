@@ -105,7 +105,7 @@ class Menu {
 
             for (let i = 0; i < this.selectedDepartment.members.length; i++) {
                 description += i + ') ' + this.selectedDepartment.members[i].name
-                + ' - ' + this.selectedDepartment.selectedDepartment.members[i].number + '\n';
+                  + ' - ' + this.selectedDepartment.selectedDepartment.members[i].number + '\n';
 
             }
 
