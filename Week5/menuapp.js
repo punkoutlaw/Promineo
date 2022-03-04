@@ -16,7 +16,7 @@ class Player {
 class Team {
     constructor(name) {
         this.name = name;
-        this.players = []; // each time we create a team, we will crate a new array that holds all the players on that team.
+        this.players = []; // each time we create a team, we will create a new array that holds all the players on that team.
     }
 
     addPlayer(player) {

@@ -36,7 +36,7 @@ class Department {
 
 class Menu {
     constructor() {
-        this.deparments = [];
+        this.departments = [];
         this.selectedDepartment = null;
     }
     start() {
@@ -66,19 +66,19 @@ class Menu {
 
     showMainMenuOptions() {
         return prompt(`
-            (0) Exit
-            (1) Create new department
-            (2) View department
-            (3) Delete department
-            (4) Display all departments        
+            0) Exit
+            1) Create new department
+            2) View department
+            3) Delete department
+            4) Display all departments        
         `)
     }
 
-    showDepartmentMenuOptions() {
+    showDepartmentMenuOptions(departmentInfo) {
         return prompt(`
-            (0) Go Back
-            (1) Create member
-            (2) Delete member
+            0) Go Back
+            1) Create member
+            2) Delete member
             ___________________
             ${departmentInfo}
         `);
@@ -87,19 +87,19 @@ class Menu {
     displayDepartments() {
         let departmentString = '';
         for (let i = 0; i < this.departments.length; i++) {
-            departmentString += i + ') ' + this.deparments[i].name + '\n';
+            departmentString += i + ') ' + this.departments[i].name + '\n';
         }
         alert(departmentString);
     }
 
     createDepartment() {
         let name = prompt('Enter name for new Department:');
-        this.deparments.push(new Department(name));
+        this.departments.push(new Department(name));
     }
 
     viewDepartment() {
         let index = prompt('Enter the index of the Department you would like to view:');
-        if (index > -1 && index < this.deparments.length) {
+        if (index > -1 && index < this.departments.length) {
             this.selectedDepartment = this.departments[index];
             let description = 'Department Name: ' + this.selectedDepartment.name + '\n';
 
