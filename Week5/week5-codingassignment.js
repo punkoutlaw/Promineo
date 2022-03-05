@@ -49,8 +49,10 @@ class Menu {
                     break;
                 case '2':
                     this.viewDepartment();
+                    break;
                 case '3':
                     this.deleteDepartment();
+                    break;
                 case '4':
                     this.displayDepartments();
                     break;
@@ -71,7 +73,7 @@ class Menu {
             2) View department
             3) Delete department
             4) Display all departments        
-        `)
+            `)
     }
 
     showDepartmentMenuOptions(departmentInfo) {
@@ -81,7 +83,7 @@ class Menu {
             2) Delete member
             ___________________
             ${departmentInfo}
-        `);
+            `);
     }
 
     displayDepartments() {
