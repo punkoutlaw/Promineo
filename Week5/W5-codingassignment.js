@@ -73,7 +73,7 @@ class Menu {
             2) View department
             3) Delete department
             4) Display all departments        
-            `)
+            `);
     }
 
     showDepartmentMenuOptions(departmentInfo) {
@@ -107,7 +107,7 @@ class Menu {
 
             for (let i = 0; i < this.selectedDepartment.members.length; i++) {
                 description += i + ') ' + this.selectedDepartment.members[i].name
-                  + ' - ' + this.selectedDepartment.selectedDepartment.members[i].number + '\n';
+                  + ' - ' + this.selectedDepartment.members[i].number + '\n';
 
             }
 
