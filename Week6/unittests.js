@@ -1,4 +1,11 @@
-// Unit testing is the process of writing code to test our application code.
+/*
+
+Unit testing is the process of writing code to test our application code.
+Writing unit tests is an effective way to reduce errors and breaking changes.
+Test driven development is the process of writing tests first,
+and then writing the code to pass the tests after the logic is defined in the unit tests.
+
+*/
 
 var expect = chai.expect;
 
