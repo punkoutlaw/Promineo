@@ -1,0 +1,15 @@
+{
+  "name": "week6",
+  "version": "1.0.0",
+  "description": "Week 6 assignment",
+  "main": "W6-codingassignment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Feudale",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.1"
+  }
+}
