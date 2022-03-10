@@ -236,3 +236,49 @@ for(i = 1; i <= 10; i++){
     console.log(num +" x " + i + " = " + (num*i) );
 }
 
+/*
+
+OPENCLASS QUESTIONS
+
+Write a while loop that does a countdown from the variable countdown. This number represents the number that a user enters. Check to make sure the number is not larger than 10, but greater than or equal to 3. Each time the loop runs, print to the console the value of the counter followed by three periods (…). Once out of the loop, print to the console "We have lift off!". If a number is less than 3 or greater than 10, then the only message printed to the console is "We have lift off!"
+
+If the user inputs 3, the output should be:
+3…
+2…
+1…
+We have lift off!
+
+*/
+
+var countDown = parseInt(input[0]);
+
+//write your code here
+
+if (countDown < 3 || countDown > 10) {
+    console.log("We have lift off!");
+    
+} else {
+    while (countDown > 0) {
+        console.log(countDown + "...");
+        countDown--;
+    } 
+    
+    console.log("We have lift off!");
+}
+
+
+// OR //
+
+var countdown = parseInt(input[0]);
+
+if (countdown <= 10 && countdown >= 3) {
+    while (countdown >= 1) {
+        console.log(countdown + "...");
+        countdown--;
+    }
+}
+
+console.log("We have lift off!");
+
+// What happens if your forget to add an increment or decrement operator in a while loop?
+// ANSWER: You will create an infinite loop.
