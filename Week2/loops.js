@@ -240,6 +240,10 @@ for(i = 1; i <= 10; i++){
 
 OPENCLASS QUESTIONS
 
+
+QUESTION 8:
+
+
 Write a while loop that does a countdown from the variable countdown. This number represents the number that a user enters. Check to make sure the number is not larger than 10, but greater than or equal to 3. Each time the loop runs, print to the console the value of the counter followed by three periods (…). Once out of the loop, print to the console "We have lift off!". If a number is less than 3 or greater than 10, then the only message printed to the console is "We have lift off!"
 
 If the user inputs 3, the output should be:
@@ -282,3 +286,41 @@ console.log("We have lift off!");
 
 // What happens if your forget to add an increment or decrement operator in a while loop?
 // ANSWER: You will create an infinite loop.
+
+/*
+
+QUESTION 9:
+
+Write a for loop that loops from 1-100 and prints the iteration count and "foo" if the iteration count is even.
+
+For example, if the iteration count is 2, then the console would read "2 foo". The final output should be "100 foo". Notice there is a space between the number and foo.
+
+*/
+
+for (let i = 2; i <= 100; i += 2) {
+    console.log(i + " foo");
+ }
+
+ // OR //
+
+ for(var i = 1; i <= 100; i++){
+    if (i % 2 === 0){
+        console.log(i + " foo")
+    }
+}
+
+// Margaret wants to count backwards from 1000 to 0. Which loop can help her accomplish this?
+// ANSWER: 
+// A.
+// For
+
+// B.
+// Do/While
+
+// C.
+// While
+
+// D.
+// **All of the above** 
+
+
