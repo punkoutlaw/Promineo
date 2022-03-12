@@ -61,3 +61,52 @@ Write a Unit Test using Mocha and Chai for at least one of the functions you wri
 
 // END ORIGINAL CODE //
 
+// The following code will set a constant value for each of the created arrays:
+
+const cardSuits = ["♠️", "♥️", "♣️", "♦️"]
+const cardValues = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+console.log(cardSuits)
+console.log(cardValues)
+
+// The following code will create the deck consisting of all 52 cards and every suits variants:
+
+class Deck {
+  constructor(cards = newDeck()) {
+    this.cards = cards;
+  }
+
+  get numberOfCards() {
+    return this.cards.length
+  }
+
+  shuffle() {
+    for(let i = this.numberOfCards - 1; i > 0; i--) {
+      const newIndex = Math.floor(Math.random() * (i + 1))
+      const oldValue = this.cards [newIndex]
+      this.cards[newIndex] = this.cards[i]
+      this.cards[i] = oldValue
+    }
+  }
+}
+
+class Card {
+  constructor(suit, value) {
+    this.suit = suit
+    this.value = value
+  }
+}
+
+// The folling code block will create a new deck with all 52 cards:
+
+function newDeck() {
+  return cardSuits.flatMap(suit => { // the flatMap function will take all of the arrays and condenses them into a one array
+    return cardValues.map(value => {
+      return new Card(suit, value)
+    })
+  })
+}
+
+const deck = new Deck();
+deck.shuffle()
+console.log(deck.cards);
