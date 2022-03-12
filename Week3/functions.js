@@ -107,6 +107,8 @@ function findCircumference (radius) {
 //do not change below, used for testing purposes
 console.log(findCircumference(a));
 
+/*
+
 // Create a function called isBlue. It takes one parameter. Return true if it is passed "blue", otherwise return false.
 
 // The passed value can be "blue" with any of the letters capitalized as well. (i.e."Blue", "bLue", "BLUE", etc…) 
@@ -136,6 +138,8 @@ console.log(isBlue(a));
 
 // OR //
 
+var a = 0;
+
 function isBlue(var1){
     return var1.toLowerCase() === "blue";
 }
@@ -149,3 +153,83 @@ function myFunction(func1, func2) {
 }
 
 console.log(myFunction('Hello', 'world'));
+
+*/
+
+
+/*
+
+QUESTION 5:
+
+Write a function called speakFriend that takes one parameter. 
+Return the string "Access Denied". But, if the passed in value is "Mellon", return "Enter"
+
+*/
+
+var a = "Mellon";
+
+//write your code below
+
+function speakFriend(a) {
+    if ( a == "Mellon") { // Be care of the equal operator! Make sure to use "==" or "===". If you use "=" it will chance the variables value.
+        return "Enter";
+    } else if (a != "Mellon") {
+        return "Access Denied";
+    }
+} console.log(speakFriend(a));
+
+// OR //
+
+var a = "Speak Friend";
+
+
+//write your code below
+function speakFriend(a){
+    if(a == "Mellon"){
+        return "Enter";
+    } 
+    return "Access Denied";
+}
+
+
+//do not change below
+console.log(speakFriend(a));
+
+
+/*
+
+QUESTION 6:
+
+Create a function named checkout that accepts 2 variables named cardBalance and price. 
+If the price is more than the card balance, return false. Otherwise, return the new card balance.
+
+*/
+
+var a = 11;
+var b = 7;
+
+//write your code below
+
+function checkout(cardBalance, price) {
+    if (price > cardBalance) { // When adding an if/else statement in a function, always add new {} brackets after initial "if".
+        return false;
+    } else {
+        return cardBalance - price;
+    }
+}
+
+
+//do not change below, used for testing purposes
+console.log(checkout(a,b));
+
+
+/*
+
+QUESTION 7:
+
+Write a function called loopUntilX that takes one parameter. 
+Within the function, write a loop that loops as many times as the passed in value, starting at 0. 
+Within the loop, print the number of iterations to the console. Once the loop is done, return true.
+
+*/
+
