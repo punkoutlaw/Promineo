@@ -48,10 +48,6 @@ class Card {
     this.value = value
   }
 
-  // get color() {
-  //   return this.suit === "♣" || this.suit === "♠" ? "black" : "red"
-  // }
-
 }
 
 function freshDeck() {
@@ -97,9 +93,9 @@ function startGame() {
   stop = false
 } 
 console.log(player1 + " is given 26 cards")
-console.log(playerDeck)
+// console.log(playerDeck)
 console.log(player2 + " is given 26 cards")
-console.log(computerDeck)
+// console.log(computerDeck)
 
   const playerCard = playerDeck.pop()
   const computerCard = computerDeck.pop()
@@ -110,30 +106,37 @@ console.log(computerDeck)
   updateDeckCount()
 
   if (isRoundWinner(playerCard, computerCard)) {
-    console.log("You won!")
-    playerDeck.push(playerCard)
-    playerDeck.push(computerCard)
+    console.log(`${player1} won!`)
+    playerDeck.push(playerDeck.pop())
+    playerDeck.push(computerDeck.pop())
   } else if (isRoundWinner(computerCard, playerCard)) {
-    console.log("You lose!")
-    computerDeck.push(playerCard)
+    console.log(`${player2} won!`)
+    computerDeck.push(playerDeck.pop())
     computerDeck.push(computerCard)
   } else {
     console.log("It's a draw!")
-    playerDeck.push(playerCard)
-    computerDeck.push(computerCard)
+    playerDeck.push(playerDeck.pop())
+    computerDeck.push(computerDeck.pop())
   } 
   
-  // if (isGameOver(playerDeck)) {
-  //   console.log("You Lose!!")
-  //   stop = true
-  // } else if (isGameOver(computerDeck)) {
-  //   console.log("You Win!!")
-  //   stop = true
-  // }
+  if (isGameOver(playerDeck)) {
+    console.log("You Lose!!")
+    stop = true
+  } else if (isGameOver(computerDeck)) {
+    console.log("You Win!!")
+    stop = true
+  }
 
 function updateDeckCount() {
+  if(playerCard > computerCard === computerDeck.pop() || 
+      computerCard > playerCard === playerDeck.pop()) {
+      } else { (playerCard == computerCard, playerDeck.pop() && computerDeck.pop())
+    }
+} 
 
-}
+// console.log(playerDeck, computerDeck)
+console.log(player1 + " has " + playerDeck.numberOfCards + " cards")
+console.log(player2 + " has " + computerDeck.numberOfCards + " cards")
 
 function isRoundWinner(cardOne, cardTwo) {
   return cardValueSwitch[cardOne.value] > cardValueSwitch[cardTwo.value]
