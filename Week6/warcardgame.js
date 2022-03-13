@@ -104,6 +104,9 @@ console.log(computerDeck)
   const playerCard = playerDeck.pop()
   const computerCard = computerDeck.pop()
 
+  console.log(player1, playerCard)
+  console.log(player2, computerCard)
+
   updateDeckCount()
 
   if (isRoundWinner(playerCard, computerCard)) {
@@ -119,9 +122,7 @@ console.log(computerDeck)
     playerDeck.push(playerCard)
     computerDeck.push(computerCard)
   } 
-  console.log(player1, playerCard)
-  console.log(player2, computerCard)
-
+  
   // if (isGameOver(playerDeck)) {
   //   console.log("You Lose!!")
   //   stop = true
