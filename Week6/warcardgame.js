@@ -62,7 +62,7 @@ function freshDeck() {
   })
 }
 
-const CARD_VALUE_MAP = {
+const cardValueSwitch = {
   "2": 2,
   "3": 3,
   "4": 4,
@@ -136,7 +136,7 @@ function updateDeckCount() {
 }
 
 function isRoundWinner(cardOne, cardTwo) {
-  return CARD_VALUE_MAP[cardOne.value] > CARD_VALUE_MAP[cardTwo.value]
+  return cardValueSwitch[cardOne.value] > cardValueSwitch[cardTwo.value]
 }
 
 function isGameOver(deck) {
