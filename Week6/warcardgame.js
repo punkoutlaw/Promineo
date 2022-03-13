@@ -1,219 +1,143 @@
-// Clear out the mess to start!
-console.clear();
+const cardSuits = ["♠", "♣", "♥", "♦"]
+const cardValues = [
+  "A",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+]
 
-// Define the Card Class
-var Card = (function(){
-  // Member Vars
-  //index: '# 0-51 signifies the index of a card in a new deck of cards'
-  //value: 'numerical value: 1 - 13'
-  //suit: 'spades, diamonds, clubs, hearts'
-  
-  // Prototype members
-  //number: '2 - 10, J, Q, K, A'
-  //name: ' {number} of {suit} '
-  
-  //          ['Spades', 'Diamonds', 'Clubs', 'Hearts']
-  var suitNames = ['spades', 'diamonds', 'clubs', 'hearts'],
-      suitCodes = ['\u2660', '\u2666', '\u2663', '\u2665'],
-      Card = function(index){
-        this.index = index;
-        this.value = (index % 13)+1;
-        this.suit = suitNames[Math.floor(index/13)];
-      };
-  
-  Card.prototype = {
-    get number() {
-      switch(this.value) {
-        case 11:
-          return 'J';
-        case 12:
-          return 'Q';
-        case 13:
-          return 'K';
-        case 1:
-          return 'A';
-        default:
-          return this.value;
-      }
-      return this.value;
-    },
-    get name() {
-      var numberName = (function(n){
-        switch(n){
-          case 'A': return 'Ace';
-          case 'K': return 'King';
-          case 'Q': return 'Queen';
-          case 'J': return 'Jack';
-          default: return n;
-        }
-      })(this.number);
-      return numberName + ' of ' + this.suit;
-    },
-    get suitUnicodeArray() { return suitCodes; },
-    get suitNameArray() { return suitNames; }
-  };
-            
-  return Card;
-})();
+class Deck {
+  constructor(cards = freshDeck()) {
+    this.cards = cards
+  }
 
-console.log(new Card(13));
+  get numberOfCards() {
+    return this.cards.length
+  }
 
-/*** START GAME SETUP ***/
+  pop() {
+    return this.cards.shift()
+  }
 
-// Create Deck of cards
-var deck = Array.apply(null, Array(52)).map(function(_, i){ return new Card(i); });
+  push(card) {
+    this.cards.push(card)
+  }
 
-//for( var i = 0 ; i < 13 ; i++ ){
-  //console.log( deck[i] );
-//}
-
-// Create player decks
-var playerDeck = [], cpuDeck = [],
-    drawIndex;
-
-// Deal cards to players (2)
-while( deck.length > 0 ){
-  
-  // Draw Card for Player
-  drawIndex = Math.random() * deck.length;
-  playerDeck.push( deck.splice(drawIndex, 1)[0] );
-  
-  // Draw Card for CPU
-  drawIndex = Math.random() * deck.length;
-  cpuDeck.push( deck.splice(drawIndex.cpu, 1)[0] );
-  
+  shuffle() {
+    for (let i = this.numberOfCards - 1; i > 0; i--) {
+      const newIndex = Math.floor(Math.random() * (i + 1))
+      const oldValue = this.cards[newIndex]
+      this.cards[newIndex] = this.cards[i]
+      this.cards[i] = oldValue
+    }
+  }
 }
 
-/*** END GAME SETUP ***/
-
-// Gameplay
-// push button to draw and play card
-// winner takes cards, added to bottom of their deck
-// tie, play another card
-// game ends when one player is out of cards
-
-// Single Round
-var drawAndPlay = function(rewards){
-  if( rewards ){ console.log('rewards = ', rewards); }
-  
-  // if either deck is empty, game over
-  if( playerDeck.length === 0 || cpuDeck.length === 0 ){
-    // game over
-    if( playerDeck.length > 0 ){
-      console.log('Player Won');
-    } else {
-      console.log('CPU Won');
-    }
-    return false;
+class Card {
+  constructor(suit, value) {
+    this.suit = suit
+    this.value = value
   }
-  // draw card from each deck
-  var playerCard = playerDeck.shift(),
-      cpuCard = cpuDeck.shift(),
-      rewards = rewards ? rewards : [];
-  
-  // Update View for Drawn Cards TODO: Optimize
-  var playerSection = document.querySelector('section.player'),
-      cpuSection = document.querySelector('section.cpu'),
-      playerCardDiv = playerSection.querySelector('div.card'),
-      cpuCardDiv = cpuSection.querySelector('div.card'),
-      playerPoints = playerSection.querySelector('[data-points]'),
-      cpuPoints = cpuSection.querySelector('[data-points]');
-  
-  Card.prototype.suitNameArray.forEach(function(v,i,a){
-    playerCardDiv.classList.remove(v);
-    cpuCardDiv.classList.remove(v);
-    return true;
-  });
-  
-  playerCardDiv.querySelector('span.name').innerHTML = playerCard.number;
-  playerCardDiv.classList.add( playerCard.suit );
-  playerSection.querySelector('div[data-cards-left]').setAttribute('data-cards-left', playerDeck.length);
-  
-  cpuCardDiv.querySelector('span.name').innerHTML = cpuCard.number;
-  cpuCardDiv.classList.add( cpuCard.suit );
-  cpuSection.querySelector('div[data-cards-left]').setAttribute('data-cards-left', cpuDeck.length);
-  
-  // compare cards
-  if( playerCard.value === cpuCard.value ){
-    console.log('tie', playerCard, cpuCard);
-    // tie
-      // play another card
-    rewards.push(playerCard);
-    rewards.push(cpuCard);
-    return drawAndPlay(rewards);
-  } else if( playerCard.value > cpuCard.value ){
-    // Player wins
-    console.log('Player wins round', playerCard, cpuCard);
-    // Add point to player score TODO
-    playerPoints.setAttribute('data-points', parseInt(playerPoints.getAttribute('data-points'))+1)
-    
-    // Reward Cards
-    playerDeck.splice(playerDeck.length, 0, playerCard, cpuCard);
-    if( rewards.length > 0 ){
-      playerDeck = playerDeck.concat(rewards);
-    }
-    
+
+  // get color() {
+  //   return this.suit === "♣" || this.suit === "♠" ? "black" : "red"
+  // }
+
+}
+
+function freshDeck() {
+  return cardSuits.flatMap(suit => {
+    return cardValues.map(value => {
+      return new Card(suit, value)
+    })
+  })
+}
+
+const CARD_VALUE_MAP = {
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+  "9": 9,
+  "10": 10,
+  J: 11,
+  Q: 12,
+  K: 13,
+  A: 14
+}
+
+let playerDeck
+let computerDeck
+let inRound
+let stop
+let player1 = "David"
+let player2 = "Computer"
+
+startGame()
+function startGame() {
+  const deck = new Deck()
+  deck.shuffle(player1, player2)
+
+  const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
+  playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
+  computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
+  inRound = false
+  stop = false
+} 
+console.log(player1 + " is given 26 cards")
+console.log(playerDeck)
+console.log(player2 + " is given 26 cards")
+console.log(computerDeck)
+
+  const playerCard = playerDeck.pop()
+  const computerCard = computerDeck.pop()
+
+  updateDeckCount()
+
+  if (isRoundWinner(playerCard, computerCard)) {
+    console.log("You won!")
+    playerDeck.push(playerCard)
+    playerDeck.push(computerCard)
+  } else if (isRoundWinner(computerCard, playerCard)) {
+    console.log("You lose!")
+    computerDeck.push(playerCard)
+    computerDeck.push(computerCard)
   } else {
-    // CPU Wins
-    console.log('CPU wins round', playerCard, cpuCard);
-    // Add point to CPU score TODO
-    cpuPoints.setAttribute('data-points', parseInt(cpuPoints.getAttribute('data-points'))+1)
-    
-    // Reward Cards
-    cpuDeck.splice(cpuDeck.length, 0, cpuCard, playerCard);
-    if( rewards.length > 0 ){
-      cpuDeck = cpuDeck.concat(rewards);
-    }
-    
-  }
-  
-  console.log('Player Cards left = '+playerDeck.length, 'CPU Cards left = '+cpuDeck.length);
-  return true;
-};
+    console.log("It's a draw!")
+    playerDeck.push(playerCard)
+    computerDeck.push(computerCard)
+  } 
+  console.log(player1, playerCard)
+  console.log(player2, computerCard)
 
+  // if (isGameOver(playerDeck)) {
+  //   console.log("You Lose!!")
+  //   stop = true
+  // } else if (isGameOver(computerDeck)) {
+  //   console.log("You Win!!")
+  //   stop = true
+  // }
 
+function updateDeckCount() {
 
-window.onload = function(){
-  var btn = document.querySelector('button.draw');
-  btn.addEventListener('click', function(event){
-    var keepGoing = drawAndPlay();
-    if( !keepGoing ){
-      alert('Game Over');
-      clearInterval(window.intervalID);
-    }
-  });
-  
-  /* 
-  // PLAY SELF
-  window.intervalID = setInterval(function(){
-    btn.dispatchEvent(new Event('click'));
-  }, 10);
-  */
-  
-};
+}
 
-// Testing play function
-//var keepGoing = true;
-//while( keepGoing ){
-  //keepGoing = drawAndPlay();
-//}
+function isRoundWinner(cardOne, cardTwo) {
+  return CARD_VALUE_MAP[cardOne.value] > CARD_VALUE_MAP[cardTwo.value]
+}
 
-/*
-// PLAY SELF
-var intervalID = setInterval(function(){
-  keepGoing = drawAndPlay();
-  if( !keepGoing ){
-    clearInterval(intervalID);
-    console.log('Game ended');
-  }
-}, 2000);
-*/
-//console.log('Game ended');
-
-// Game Elements
-// Score: number of rounds won (Player, CPU)
-// Cards Left in Deck (player, cpu)
-// game board (where cards are played)
-// Draw/Play Button
-// Restart/New Game button (only after game ends)
-// Games won count (player, cpu)
+function isGameOver(deck) {
+  return deck.numberOfCards === 0
+}

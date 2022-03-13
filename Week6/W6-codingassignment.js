@@ -66,8 +66,27 @@ Write a Unit Test using Mocha and Chai for at least one of the functions you wri
 const cardSuits = ["♠️", "♥️", "♣️", "♦️"]
 const cardValues = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
+// This will shuffle the cards while retaining their values:
+
+const cardValueSwitch = {
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+  "9": 9,
+  "10": 10,
+  "J": 11,
+  "Q": 12,
+  "K": 13,
+  "A": 14,
+}
+
 console.log(cardSuits)
 console.log(cardValues)
+console.log(cardValueSwitch)
 
 // The following code will create the deck consisting of all 52 cards and every suits variants:
 
@@ -79,6 +98,14 @@ class Deck {
   get numberOfCards() {
     return this.cards.length
   }
+
+pop() {
+  return this.cards.shift()
+}
+
+push(card) {
+  this.cards.push(card)
+}
 
   shuffle() {
     for(let i = this.numberOfCards - 1; i > 0; i--) {
@@ -107,6 +134,70 @@ function newDeck() {
   })
 }
 
-const deck = new Deck();
-deck.shuffle()
-console.log(deck.cards);
+let playerDeck
+let computerDeck
+let inRound
+let playerCard
+let computerCard
+let stop
+
+// The following code will initiate the game:
+
+startGame()
+function startGame() {
+  const deck = new Deck()
+  deck.shuffle()
+
+  const deckMidPoint = Math.ceil(deck.numberOfCards / 2)
+  playerDeck = new Deck(deck.cards.slice(0, deckMidPoint))
+  computerDeck = new Deck(deck.cards.slice(deckMidPoint, deck.numberOfCards))
+  inRound = false
+  stop = false
+
+  console.log(playerDeck)
+  console.log(computerDeck)
+}
+
+function cleanBeforeRound() {
+  inRound = false
+
+  updateDeckCount()
+    if (isRoundWinner(playerCard > computerCard)) {
+      return "You win!"
+    } else if (isRoundWinner(computerCard > playerCard)) {
+      return "You lose!"
+    } else {
+      console.log("Draw.")
+    }
+
+    if (isGameOver(playerDeck)) {
+      console.log("Game Over!")
+      stop = true
+    } else if (isGameOver(computerDeck)) {
+      console.log("You Won the Game!")
+      stop = true
+    }
+}
+
+function flipCards() {
+  inRound = true
+
+  const playerCard = playerDeck.pop()
+  const computerCard = computerDeck.pop()
+
+  playerCardSlot.appendChild(playerCard)
+  computerCardSlot.appendChild(computerCard)
+}
+
+function updateDeckCount() {
+  computerDeck.numberOfCards
+  playerDeck.numberOfCards
+}
+
+function isRoundWinner (cardOne, cardTwo) {
+  return cardValueSwitch[cardOne.value] > cardValueSwitch[cardTwo.value]
+}
+
+function isGameOver(deck) {
+  return deck.numberOfCards === 0
+}
