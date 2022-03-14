@@ -1,3 +1,23 @@
+/*
+
+For the final project you will be creating an automated version of the classic card game WAR.
+
+Think about how you would build this project and write your plan down. Consider classes such as Card, Deck, 
+and Player and what fields and methods they might each have.
+
+You can implement the game however you’d like (i.e. printing to the console, using alert, or some other way). 
+The completed project should, when ran, do the following:
+
+-	Deal 26 Cards to two Players from a Deck. 
+-	Iterate through the turns where each Player plays a Card
+-	The Player who played the higher card is awarded a point
+    o	Ties result in zero points for either Player
+-	After all cards have been played, display the score.
+
+Write a Unit Test using Mocha and Chai for at least one of the functions you write.
+
+*/
+
 const cardSuits = ["♠", "♣", "♥", "♦"]
 const cardValues = [
   "A",
@@ -103,20 +123,28 @@ console.log(player2 + " is given 26 cards")
   console.log(player1, playerCard)
   console.log(player2, computerCard)
 
-  updateDeckCount()
+  function updateDeckCount() {
+    if(playerCard > computerCard || computerCard > playerCard)
+      return computerDeck.pop(), playerDeck.pop() 
+        else { (playerCard == computerCard)
+          return playerDeck.pop() && computerDeck.pop()
+      }
+  } 
 
+  updateDeckCount()
+  
   if (isRoundWinner(playerCard, computerCard)) {
     console.log(`${player1} won!`)
-    playerDeck.push(playerDeck.pop())
-    playerDeck.push(computerDeck.pop())
+    playerDeck.pop(playerCard)
+    playerDeck.pop(computerCard)
   } else if (isRoundWinner(computerCard, playerCard)) {
     console.log(`${player2} won!`)
-    computerDeck.push(playerDeck.pop())
-    computerDeck.push(computerCard)
+    computerDeck.pop(playerCard)
+    computerDeck.pop(computerCard)
   } else {
     console.log("It's a draw!")
-    playerDeck.push(playerDeck.pop())
-    computerDeck.push(computerDeck.pop())
+    playerDeck.pop(playerCard)
+    computerDeck.pop(computerCard)
   } 
   
   if (isGameOver(playerDeck)) {
@@ -126,13 +154,6 @@ console.log(player2 + " is given 26 cards")
     console.log("You Win!!")
     stop = true
   }
-
-function updateDeckCount() {
-  if(playerCard > computerCard === computerDeck.pop() || 
-      computerCard > playerCard === playerDeck.pop()) {
-      } else { (playerCard == computerCard, playerDeck.pop() && computerDeck.pop())
-    }
-} 
 
 // console.log(playerDeck, computerDeck)
 console.log(player1 + " has " + playerDeck.numberOfCards + " cards")
