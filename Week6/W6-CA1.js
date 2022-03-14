@@ -107,6 +107,8 @@ push(card) {
   this.cards.push(card)
 }
 
+// This will shuffle the cards as the name implies:
+
   shuffle() {
     for(let i = this.numberOfCards - 1; i > 0; i--) {
       const newIndex = Math.floor(Math.random() * (i + 1))
@@ -147,6 +149,8 @@ startGame()
 function startGame() {
   const deck = new Deck()
   deck.shuffle()
+
+// This splits the deck and deals each player 26 cards:
 
   const deckMidPoint = Math.ceil(deck.numberOfCards / 2)
   playerDeck = new Deck(deck.cards.slice(0, deckMidPoint))
