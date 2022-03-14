@@ -18,170 +18,54 @@ Write a Unit Test using Mocha and Chai for at least one of the functions you wri
 
 */
 
+// First thing we are going to do is create our "Player" class:
 
 class Player {
-  constructor(player) {
+  constructor(player, score) {
     this.player = player
+    this.score = score
   }
   toString() {
     return this.player
   }
 }
 
-// The following code will set a constant value for each of the created arrays:
+// Next, we will create our deck using a set of arrays and nesting them into a function:
 
-const cardSuits = ["♠", "♣", "♥", "♦"]
-const cardValues = [
-  "A",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "J",
-  "Q",
-  "K"
-]
+function createDeck() {
+  const cardSuits = ["♠", "♣", "♥", "♦"]
+  const cardValues = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+  const deck = [];
 
-// This will shuffle the cards while retaining their values:
-
-const cardValueSwitch = {
-  "2": 2,
-  "3": 3,
-  "4": 4,
-  "5": 5,
-  "6": 6,
-  "7": 7,
-  "8": 8,
-  "9": 9,
-  "10": 10,
-  J: 11,
-  Q: 12,
-  K: 13,
-  A: 14
-}
-
-class Deck {
-  constructor(cards = freshDeck()) {
-    this.cards = cards
-  }
-
-  get numberOfCards() {
-    return this.cards.length
-  }
-
-  pop() {
-    return this.cards.shift()
-  }
-
-  push(card) {
-    this.cards.push(card)
-  }
-
-  shuffle() {
-    for (let i = this.numberOfCards - 1; i > 0; i--) {
-      const newIndex = Math.floor(Math.random() * (i + 1))
-      const oldValue = this.cards[newIndex]
-      this.cards[newIndex] = this.cards[i]
-      this.cards[i] = oldValue
+  for(let suitCounter = 0; suitCounter < 4; suitCounter++) {
+    for(let valueCounter = 0; valueCounter < 13; valueCounter++) {
+      // console.log(cardValues[valueCounter] + cardSuits[suitCounter]);
+      deck.push(cardValues[valueCounter] + cardSuits[suitCounter]);
     }
+} 
+return deck;
+}
+
+// Now that our deck has been create, we will create a function that will shuffle all of the cards:
+
+function shuffleDeck(deck) {
+  for(let i = 0; i < 52; i++) {
+    var tempCard = deck[i];
+    var randomIndex = Math.floor(Math.random() * 51);
+    deck[i] = deck[randomIndex];
+    deck[randomIndex] = tempCard;
   }
 }
 
-class Card {
-  constructor(suit, value) {
-    this.suit = suit
-    this.value = value
-  }
+var testDeck = createDeck();
+shuffleDeck(testDeck);
 
-}
+// alert("We are going to play war! Let me shuffle the deck for you 😉");
+console.log(testDeck);
 
-// The folling code block will create a new deck with all 52 cards:
 
-function freshDeck() {
-  return cardSuits.flatMap(suit => {
-    return cardValues.map(value => {
-      return new Card(suit, value)
-    })
-  })
-}
-
-function gameScore(playerScore, computerScore) {
-  return playerScore && computerScore
-}
-
-let playerDeck
-let computerDeck
-let inRound
-let stop
-let player1 = new Player("David")
-let player2 = new Player("Computer")
-
-startGame()
-function startGame() {
-  const deck = new Deck()
-  deck.shuffle(player1, player2)
-
+function dealCards(deck) {
   const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
   playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
   computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
-  inRound = false
-  stop = false
-} 
-console.log(player1 + " is given 26 cards")
-// console.log(playerDeck)
-console.log(player2 + " is given 26 cards")
-// console.log(computerDeck)
-
-  const playerCard = playerDeck.pop()
-  const computerCard = computerDeck.pop()
-
-  console.log(player1, playerCard)
-  console.log(player2, computerCard)
-
-function updateDeckCount() {
-  if(playerCard > computerCard, computerDeck.pop() ||
-      computerCard > playerCard, playerDeck.pop()) { 
-      } else { (playerCard == computerCard, playerDeck.pop() && computerDeck.pop())
-    }
-  } 
-
-  updateDeckCount()
-  
-  if (isRoundWinner(playerCard, computerCard)) {
-    console.log(`${player1} won!`)
-    playerDeck.push(playerCard)
-    playerDeck.push(computerCard)
-  } else if (isRoundWinner(computerCard, playerCard)) {
-    console.log(`${player2} won!`)
-    computerDeck.push(playerCard)
-    computerDeck.push(computerCard)
-  } else {
-    console.log("It's a draw!")
-    playerDeck.push(playerCard)
-    computerDeck.push(computerCard)
-  } 
-  
-  if (isGameOver(playerDeck)) {
-    console.log("You Lose!!")
-    stop = true
-  } else if (isGameOver(computerDeck)) {
-    console.log("You Win!!")
-    stop = true
-  }
-
-// console.log(playerDeck, computerDeck)
-console.log(player1 + " now has " + playerDeck.numberOfCards + " cards")
-console.log(player2 + " now has " + computerDeck.numberOfCards + " cards")
-
-function isRoundWinner(cardOne, cardTwo) {
-  return cardValueSwitch[cardOne.value] > cardValueSwitch[cardTwo.value]
-}
-
-function isGameOver(deck) {
-  return deck.numberOfCards === 0
 }
