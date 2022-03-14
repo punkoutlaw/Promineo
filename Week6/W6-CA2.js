@@ -88,7 +88,7 @@ class Deck {
 		let cardName = ["A","2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 		let cardSuit = ["♠", "♣", "♥", "♦"];
 
-		// We use a nested for loop to iterate through the suits and  card name in order to create new Card with the value associated by the i 
+		// We use a nested for loop to iterate through the suits and card name in order to create new Card with the value associated by the i 
 
 		for( let i = 0; i < cardName.length; i++){
 			for(let j = 0; j < suit.length; j++){
@@ -132,15 +132,10 @@ function startGame() {
   const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
   playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
   computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
-  inRound = false
-  stop = false
+
 } 
+
 console.log(player1 + " is given 26 cards")
 console.log(playerDeck)
 console.log(player2 + " is given 26 cards")
 console.log(computerDeck)
-
-console.log(player1, playerCard)
-console.log(player2, computerCard)
-
- 
