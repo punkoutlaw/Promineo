@@ -19,9 +19,9 @@ Write a Unit Test using Mocha and Chai for at least one of the functions you wri
 */
 
 class Player {
-    constructor(player, score) {
+    constructor(player) {
       this.player = player
-      this.score = score
+      this.score = 0
     }
     toString() {
       return this.player
@@ -121,6 +121,8 @@ class Player {
     const deck = new Deck()
     deck.shuffle(player1, player2)
   
+// This block of code will split the card into 2 piles
+
     const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
     playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
     computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
