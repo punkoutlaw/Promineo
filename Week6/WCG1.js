@@ -70,9 +70,6 @@ class Card {
   }
 }
 
-// let awesomeCard = new Card("an awesome Suit", "Joker", 100);
-// console.log(awesomeCard);
-
 class Deck {
   constructor() {
     this.cards = [];
@@ -104,6 +101,9 @@ const deck = new Deck(); // Here we are creating a new deck instance. No argueme
 deck.createDeck();  // calling our function to fill our array
 console.log(deck.cards); // logging our cards array [this.cards]
 
+let playerDeck
+let computerDeck
+
 class Board {
   constructor() {
     this.cardsInMiddle = [];
@@ -115,45 +115,26 @@ class Board {
     let deck = new Deck();
     deck.createDeck();
     deck.shuffleDeck();
-    this.players[0].playerCards = deck.cards.slice(0, 26);
-    this.players[1].playerCards = deck.cards.slice(26, 52);
+    playerDeck = this.players[0].playerCards = deck.cards.slice(0, 26);
+    computerDeck = this.players[1].playerCards = deck.cards.slice(26, 52);
   }
 }
 
-function flipCards() {
-  if(!gameover) {
-    var card1 = playerCards[0].shift();
-    var card2 = playerCards[1].shift();
-    checkWinner(card1,card2);
-  }
-}
 
-function checkWinner(card1, card2) {
-  console.log(card1, card2);
-  if(card1.value > card2.value) {
-    console.log(`${player1} + wins!`)
-  }
-  else if (card1.value < card2.value) {
-    console.log(`${player2} wins!`)
-  } else {
-    console.log(`It's a draw!`)
-  }
-}
+// function checkWinner(card1, card2) {
+//   console.log(card1, card2);
+//   if(card1.value > card2.value) {
+//     console.log(`${player1} + wins!`)
+//   }
+//   else if (card1.value < card2.value) {
+//     console.log(`${player2} wins!`)
+//   } else {
+//     console.log(`It's a draw!`)
+//   }
+// }
+
 
 let gameBoard = new Board();
 gameBoard.start("David", "Computer");
 
 console.log(gameBoard.players);
-
-
-
-// // loop for 26 turns
-//   // while(player1.deck.length > 0){
-//   //   let player1Card = player1.deck.shift()
-//   //   let player2Card = player2.deck[0]
-//   //   if(player1Card.value > player2Card.value){
-//   //     player1.score++
-//   //   }
-//     // compare the two cards
-//     // assign points (player1.score++)
-
