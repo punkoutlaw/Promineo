@@ -79,6 +79,7 @@ let player1 = new Player('David');
 let player2 = new Player('Computer');
 console.log(player1, player2)
 
+// This next function will shuffle our deck:
 
 function shuffleDeck(array) {
   let currentIndex = array.length,  randomIndex;
@@ -124,25 +125,6 @@ class Deck {
     this.createDeck();
   }
 
-  shuffleDeck(array) {
-    let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffleDeck...
-    while (currentIndex != 0) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
-    
-  }
-
   createDeck() {
       this.suits.forEach(suit => { // When using a method, you need to put "this.method" to call it from our class
         for(let c in this.cards) {
@@ -173,7 +155,7 @@ player2.setHand(right)
 
 console.log(player1.hand, player2.hand);
 
-//Now we will compare player1 hand vs player2 hand
+// Now we will compare player1 & player2 hands
 
 while(player1.hand.length > 0) {
     let player1Card = player1.playTopCard()
@@ -189,12 +171,17 @@ while(player1.hand.length > 0) {
     }
 }
 
+// Next we will build out the logic for scoring:
+
 if(player1.score > player2.score) {
-  console.log(`${player1.playerName} Wins! Total score: ${player1.score} vs ${player2.score}`)
+  console.log(`${player1.playerName} Wins! Ending score: ${player1.score} vs ${player2.score}`)
+  alert(`${player1.playerName} Wins! Ending score: ${player1.score} vs ${player2.score}`)
 } else if (player1.score < player2.score) {
-  console.log(`${player2.playerName} Wins! Total score: ${player2.score} vs ${player1.score}`)
+  console.log(`${player2.playerName} Wins! Ending score: ${player2.score} vs ${player1.score}`)
+  alert(`${player2.playerName} Wins! Ending score: ${player2.score} vs ${player1.score}`)
 } else {
   console.log("It's a tie!")
+  alert("It's a tie!")
 }
 
 alert("Game Over!");
