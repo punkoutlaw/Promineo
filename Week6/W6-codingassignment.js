@@ -152,6 +152,7 @@ let freshDeck = new Deck();
 // This will deal the cards evenly to the two players:
 
 console.log(`${player1} & ${player2} are each given 26 cards.`)
+alert(`${player1} & ${player2} are each given 26 cards.`)
 
 let [left, right] = freshDeck.splitDeck();
 left.forEach(hand => {
