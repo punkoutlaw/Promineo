@@ -33,6 +33,8 @@ Write a Unit Test using Mocha and Chai for at least one of the functions you wri
 
 alert("Let's play war!");
 
+// First thing we will do is create our player class:
+
 class Player {
     hand = []; // using an empty array because the players hand is intially empty.
     playerName // this is optional but is good to keep track of all our properties in the class
@@ -149,12 +151,21 @@ let freshDeck = new Deck();
 
 // This will deal the cards evenly to the two players:
 
+console.log(`${player1} & ${player2} are each given 26 cards.`)
+
 let [left, right] = freshDeck.splitDeck();
+left.forEach(hand => {
+  console.log(`${player1}'s cards`)
+  console.log(hand)
+})
+right.forEach(hand => {
+  console.log(`${player2}'s cards`)
+  console.log(hand)
+})
 player1.setHand(left)
 player2.setHand(right)
 
-console.log(`${player1} & ${player2} are each given 26 cards.`)
-console.log(player1.hand, player2.hand);
+// console.log(player1.hand, player2.hand);
 
 // Now we will compare player1 & player2 hands
 
@@ -164,11 +175,14 @@ while(player1.hand.length > 0) {
     if(player1Card.value > player2Card.value) {
         player1.score++
         console.log(`${player1} won!`)
+        alert(`${player1} won!`)
     } else if (player1Card.value < player2Card.value) {
         player2.score++
         console.log(`${player2} won!`)
+        alert(`${player2} won!`)
     } else {
         console.log("It's a draw!")
+        alert("It's a draw!")
     }
 }
 
@@ -181,8 +195,10 @@ if(player1.score > player2.score) {
   console.log(`${player2.playerName} Wins! Ending score: ${player2.score} vs ${player1.score}`)
   alert(`${player2.playerName} Wins! Ending score: ${player2.score} vs ${player1.score}`)
 } else {
-  console.log("It's a tie!")
-  alert("It's a tie!")
+  console.log("It's a tie! 😲")
+  alert("It's a tie! 😲")
 }
+
+// Game ends:
 
 alert("Game Over!");

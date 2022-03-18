@@ -18,123 +18,167 @@ Write a Unit Test using Mocha and Chai for at least one of the functions you wri
 
 */
 
-////////////////////////////////////////////////////////
-
-// // let deck = ['1spades', '2spades']
-// // class Card {
-// //   value;
-// //   suit;
-// //   name;
-// // }
-// // create 2 players (Player)
-//   // name
-//   // score
-//   // player deck
-// // make a deck of 52 cards
-//   // Card class (make 52 cards)
-// // deal 26 to each player
-//   // loop through list of 52 cards, alternate pushing card into players arrays (deck)
-// // loop for 26 turns
-//   // while(player1.deck.length > 0){
-//   //   let player1Card = player1.deck.shift()
-//   //   let player2Card = player2.deck[0]
-//   //   if(player1Card.value > player2Card.value){
-//   //     player1.score++
-//   //   }
-//     // compare the two cards
-//     // assign points (player1.score++)
-//      // give a point to the winner of each turn
-//   // if tie, no points
-//   // throw away flipped over card
-//   // }
- 
-// // end the game when no cards are left in player 1 and player 2's decks
-// // print the socre (or something)
-
 class Player {
-  constructor(name) {
-    this.playerName = name
-    this.playerCards = [];
-    this.score = 0
+    constructor(player) {
+      this.player = player
+      this.score = 0
+    }
+    toString() {
+      return this.player
+    }
   }
-  toString() {
-    return this.playerName
+  
+  // The following code will set a constant value for each of the created arrays:
+  
+  const cardSuits = ["♠", "♣", "♥", "♦"]
+  const cardValues = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ]
+  
+  // This will shuffle the cards while retaining their values:
+  
+  const cardValueSwitch = {
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    J: 11,
+    Q: 12,
+    K: 13,
+    A: 14
   }
-}
-
-class Card {
-  constructor(suit, rank, value) {
-    this.suit = suit;
-    this.rank = rank;
-    this.value = value;
-  }
-}
-
-class Deck {
-  constructor() {
-    this.cards = [];
-  }
-  createDeck() {
-    let suits = ["♠", "♣", "♥", "♦"];
-    let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-    let values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-
-    for(let i = 0; i < suits.length; i++) {
-      for (let j = 0; j < ranks.length; j++) {
-        this.cards.push(new Card(suits[i], ranks[j], values[j]));
+  
+  class Deck {
+    constructor(cards = freshDeck()) {
+      this.cards = cards
+    }
+  
+    get numberOfCards() {
+      return this.cards.length
+    }
+  
+    pop() {
+      return this.cards.shift()
+    }
+  
+    push(card) {
+      this.cards.push(card)
+    }
+  
+    shuffle() {
+      for (let i = this.numberOfCards - 1; i > 0; i--) {
+        const newIndex = Math.floor(Math.random() * (i + 1))
+        const oldValue = this.cards[newIndex]
+        this.cards[newIndex] = this.cards[i]
+        this.cards[i] = oldValue
       }
     }
   }
-    shuffleDeck() {
-      let location1, location2, tmp;
-      for (let i = 0; i < 52; i++) {
-          location1 = Math.floor((Math.random() * this.cards.length));
-          location2 = Math.floor((Math.random() * this.cards.length));
-          tmp = this.cards[location1];
-          this.cards[location1] = this.cards[location2];
-          this.cards[location2] = tmp;
+  
+  class Card {
+    constructor(suit, value) {
+      this.suit = suit
+      this.value = value
+    }
+  
+  }
+  
+  // The folling code block will create a new deck with all 52 cards:
+  
+  function freshDeck() {
+    return cardSuits.flatMap(suit => {
+      return cardValues.map(value => {
+        return new Card(suit, value)
+      })
+    })
+  }
+  let playerDeck
+  let computerDeck
+  let inRound
+  let stop
+  let player1 = new Player("David")
+  let player2 = new Player("Computer")
+  
+  startGame()
+  function startGame() {
+    const deck = new Deck()
+    deck.shuffle(player1, player2)
+  
+// This block of code will split the card into 2 piles
+
+    const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
+    playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
+    computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
+    inRound = false
+    stop = false
+  } 
+  console.log(player1 + " is given 26 cards")
+  // console.log(playerDeck)
+  console.log(player2 + " is given 26 cards")
+  // console.log(computerDeck)
+  
+  const playerCard = playerDeck.pop()
+  const computerCard = computerDeck.pop()
+  
+    console.log(player1, playerCard)
+    console.log(player2, computerCard)
+  
+  function updateDeckCount() {
+    if(playerCard > computerCard, computerDeck.pop() ||
+        computerCard > playerCard, playerDeck.pop()) { 
+        } else { (playerCard == computerCard, playerDeck.pop() && computerDeck.pop())
       }
+    } 
+  
+    updateDeckCount()
+    
+    if (isRoundWinner(playerCard, computerCard)) {
+      console.log(`${player1} won!`)
+      playerDeck.push(playerCard)
+      playerDeck.push(computerCard)
+    } else if (isRoundWinner(computerCard, playerCard)) {
+      console.log(`${player2} won!`)
+      computerDeck.push(playerCard)
+      computerDeck.push(computerCard)
+    } else {
+      console.log("It's a draw!")
+      playerDeck.push(playerCard)
+      computerDeck.push(computerCard)
+    } 
+    
+    if (isGameOver(playerDeck)) {
+      console.log("You Lose!!")
+      stop = true
+    } else if (isGameOver(computerDeck)) {
+      console.log("You Win!!")
+      stop = true
+    }
+  
+  // console.log(playerDeck, computerDeck)
+  console.log(player1 + " now has " + playerDeck.numberOfCards + " cards")
+  console.log(player2 + " now has " + computerDeck.numberOfCards + " cards")
+  
+  function isRoundWinner(cardOne, cardTwo) {
+    return cardValueSwitch[cardOne.value] > cardValueSwitch[cardTwo.value]
   }
-}
-
-const deck = new Deck(); // Here we are creating a new deck instance. No arguements need to be passed in since there is nothing in the createDeck class!
-deck.createDeck();  // calling our function to fill our array
-console.log(deck.cards); // logging our cards array [this.cards]
-
-let playerDeck
-let computerDeck
-
-class Board {
-  constructor() {
-    this.cardsInMiddle = [];
-    this.players = [];
+  
+  function isGameOver(deck) {
+    return deck.numberOfCards === 0
   }
-  start(player1Name, player2Name) {
-    this.players.push(new Player(player1Name));
-    this.players.push(new Player(player2Name));
-    let deck = new Deck();
-    deck.createDeck();
-    deck.shuffleDeck();
-    playerDeck = this.players[0].playerCards = deck.cards.slice(0, 26);
-    computerDeck = this.players[1].playerCards = deck.cards.slice(26, 52);
-  }
-}
-
-
-// function checkWinner(card1, card2) {
-//   console.log(card1, card2);
-//   if(card1.value > card2.value) {
-//     console.log(`${player1} + wins!`)
-//   }
-//   else if (card1.value < card2.value) {
-//     console.log(`${player2} wins!`)
-//   } else {
-//     console.log(`It's a draw!`)
-//   }
-// }
-
-
-let gameBoard = new Board();
-gameBoard.start("David", "Computer");
-
-console.log(gameBoard.players);
