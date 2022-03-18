@@ -153,6 +153,7 @@ let [left, right] = freshDeck.splitDeck();
 player1.setHand(left)
 player2.setHand(right)
 
+console.log(`${player1} & ${player2} are each given 26 cards.`)
 console.log(player1.hand, player2.hand);
 
 // Now we will compare player1 & player2 hands
