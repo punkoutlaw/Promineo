@@ -50,6 +50,33 @@ img {
     float: center;
 }
 
+table {
+    border-collapse: collapse;
+    width: 15%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: beige;
+}
+
+tr:hover {
+    background-color: gray;
+}
+
+#box-model { /* this is an example of how to apply the "box model" to a div */
+    padding: 20px;
+    border-style: solid;
+    border-width: 3px;
+    margin: 30px;
+    background-color: blue;
+}
+
 /*
 
 CSS has many properties we can use.
