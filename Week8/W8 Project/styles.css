@@ -1,0 +1,72 @@
+body {
+    background-color: coral; 
+}
+
+h1 {
+    color:azure;
+}
+
+.div-1 {
+    background-color:azure; 
+    border-style: solid; 
+    border-color: black; 
+    border-radius: 5px;
+}
+
+.div-2 {
+    background-color:azure; 
+    border-style: solid; 
+    border-color: black; 
+    border-radius: 5px;
+}
+
+.shadow-text {
+    text-shadow: gray 1px 1px; font-size: 30px;
+}
+
+#large-paragraph {
+    font-size: 20px;
+}
+
+.hov {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+}
+
+.hov:hover {
+    background-color: red;
+}
+
+.every-even li:nth-child(even) {
+    background-color: red;
+}
+
+.every-third li:nth-child(3n) {
+    background-color: red;
+}
+
+img {
+    float: center;
+}
+
+/*
+
+CSS has many properties we can use.
+
+Here are some of the most common basic properties.
+We use key-value pairs, for example:
+
+The key on the left is the property we are definining.
+The value on the right side is the value of the property, with each value seperated by a colon and closed with a semi-colon.
+
+#examples {
+    color: gray;
+    background-color: blue;
+    border-style: dotted;
+    border-wdith: 3px;
+    border color: red;
+    border-radius: 5px;
+    height: 200px;
+    text-align: center;
+}
