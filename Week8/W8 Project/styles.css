@@ -10,11 +10,34 @@ h1 {
     font-size: 75px;
 }
 
+h2 {
+    color:azure;
+    text-align: left;
+    font-family: fantasy;
+    font-size: 50px;
+}
+
+#box-model { /* this is an example of how to apply the "box model" to a div */
+    padding: 25px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    margin: 0px;
+    background-color: black;
+    text-align: center;
+    word-spacing: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
 .div-1 {
     background-color:azure; 
     border-style: solid; 
     border-color: white; 
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .div-2 {
@@ -23,33 +46,26 @@ h1 {
     border-style: solid; 
     border-color: rgb(255, 255, 255); 
     border-radius: 3px;
+    text-align: center;
 }
 
 .shadow-text {
-    text-shadow: gray 1px 1px; font-size: 30px;
+    text-shadow: rgb(212, 85, 39) 2px 2px; font-size: 50px;
 }
 
 #large-paragraph {
     font-size: 20px;
 }
 
-.hov {
-    height: 200px;
-    width: 200px;
-    background-color: blue;
+
+a {
+    -webkit-transition: color 2s;
+    transition: color 2s;
 }
 
-.hov:hover {
-    background-color: red;
+a:hover {
+    color: rgb(212, 85, 39);
 }
-
-/* .every-even li:nth-child(even) {
-    background-color: red;
-}
-
-.every-third li:nth-child(3n) {
-    background-color: red;
-} */
 
 img {
     float: center;
@@ -57,13 +73,14 @@ img {
 
 form {
     border-collapse: collapse;
-    width: 15%;
+    width: 20%;
     border-style: solid;
     border-width: 3px;
     border-color: white;
     font-style: normal;
     font-family: sans-serif;
     color: white;
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
 }
@@ -92,28 +109,8 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-    background-color: coral;
+    background-color: rgb(212, 85, 39);
 }
-
-#box-model { /* this is an example of how to apply the "box model" to a div */
-    padding: 25px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-    margin: 0px;
-    background-color: black;
-    text-align: center;
-}
-
-#box-model-2 { /* this is an example of how to apply the "box model" to a div */
-    padding: 25px;
-    border-style: solid;
-    border-width: 3px;
-    margin: 0px;
-    background-color: coral;
-    text-align: center;
-}
-
 
 /*
 
@@ -135,3 +132,13 @@ The value on the right side is the value of the property, with each value sepera
     height: 200px;
     text-align: center;
 }
+
+.every-even li:nth-child(even) {
+    background-color: red;
+}
+
+.every-third li:nth-child(3n) {
+    background-color: red;
+} 
+
+*/
