@@ -1,5 +1,6 @@
 body {
-    background-color: coral; 
+    background-color: black;
+    font-family: sans-serif; 
 }
 
 h1 {
@@ -12,14 +13,15 @@ h1 {
 .div-1 {
     background-color:azure; 
     border-style: solid; 
-    border-color: black; 
+    border-color: white; 
     border-radius: 5px;
 }
 
 .div-2 {
-    background-color:coral; 
+    background-color:black;
+    color: white;
     border-style: solid; 
-    border-color: black; 
+    border-color: rgb(255, 255, 255); 
     border-radius: 3px;
 }
 
@@ -53,29 +55,57 @@ img {
     float: center;
 }
 
+form {
+    border-collapse: collapse;
+    width: 15%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    font-style: normal;
+    font-family: sans-serif;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 table {
     border-collapse: collapse;
     width: 15%;
     border-style: solid;
     border-width: 3px;
-    border-color: black;
+    border-color: white;
+    font-style: normal;
+    font-family: sans-serif;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 }
 
 tr:nth-child(even) {
-    background-color: beige;
-}
-
-tr:hover {
     background-color: gray;
 }
 
+tr:hover {
+    background-color: coral;
+}
+
 #box-model { /* this is an example of how to apply the "box model" to a div */
+    padding: 25px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    margin: 0px;
+    background-color: black;
+    text-align: center;
+}
+
+#box-model-2 { /* this is an example of how to apply the "box model" to a div */
     padding: 25px;
     border-style: solid;
     border-width: 3px;
@@ -83,7 +113,6 @@ tr:hover {
     background-color: coral;
     text-align: center;
 }
-
 
 
 /*
