@@ -4,6 +4,9 @@ body {
 
 h1 {
     color:azure;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 75px;
 }
 
 .div-1 {
@@ -17,7 +20,7 @@ h1 {
     background-color:azure; 
     border-style: solid; 
     border-color: black; 
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .shadow-text {
@@ -70,12 +73,15 @@ tr:hover {
 }
 
 #box-model { /* this is an example of how to apply the "box model" to a div */
-    padding: 20px;
+    padding: 25px;
     border-style: solid;
     border-width: 3px;
-    margin: 30px;
-    background-color: blue;
+    margin: 0px;
+    background-color: coral;
+    text-align: center;
 }
+
+
 
 /*
 
