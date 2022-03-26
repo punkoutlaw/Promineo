@@ -59,13 +59,26 @@ h2 {
 
 
 a {
-    -webkit-transition: color 2s;
-    transition: color 2s;
+    -webkit-transition: color 3s;
+    transition: color 3s;
+    text-decoration:none;
 }
+
+a:active {
+    color: beige;
+  }
+
+a:link {
+    color: beige;
+  }
 
 a:hover {
     color: rgb(212, 85, 39);
 }
+
+  a:visited {
+    color: rgb(3, 117, 151);
+  }
 
 img {
     float: center;
