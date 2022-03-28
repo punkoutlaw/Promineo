@@ -90,6 +90,10 @@ a:hover {
     color: rgb(3, 117, 151);
   }
 
+  .visited:hover {
+      color:rgb(212, 85, 39)
+  }
+
 img {
     border-radius: 15px;
 }
