@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        div {
+            border-style: solid;
+            border-color: black;
+            /* padding: 5px;
+            margin: 5px; */
+        }
+    </style>
+</head>
+<body class="container">
+
+    <!-- To utilize bootstrap on a given element, you need to assign a class and then call which function you want to use.
+    In the following example, we are utilizing the alert functionality built into bootstrap: -->
+
+    <div class="alert alert-primary" role="alert"> Primary </div>
+    <div class="alert alert-secondary" role="alert"> Secondary </div>
+    <div class="alert alert-success" role="alert"> Success! </div>
+    <div class="alert alert-danger" role="alert"> Danger!!! </div>
+    <div class="alert alert-warning" role="alert"> This is a warning. </div>
+
+    <!-- This container will only span according to the set margins: -->
+    <!-- Notice how the classes have numbers after them (ex: col-lg-6 tells you that a box with a margin of 6 will be displayed). -->
+    <!-- Please note, containers range from a value of 1-12 with 1 being the smallest and 12 being the largest. -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                Content
+            </div>
+            <div class="col-lg-4">
+                Content
+            </div>
+            <div class="col-lg-2">
+                Content
+            </div>
+        </div>
+    </div>
+
+    <!-- Container fluid spans the entire width of the page: -->
+
+    <div class="container-fluid"> 
+        <div class="row">
+            <div class="col-sm">
+                Content
+            </div>
+            <div class="col-sm">
+                Content
+            </div>
+            <div class="col-sm">
+                <div class="row">
+                    <div class="col-md-8">
+                        Here's my 8
+                    </div>
+                    <div class="col-md-4">
+                        Here's my 4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The following is an example of the button components built into bootstrap: -->
+    <!-- Note: the syntax to call the button is "btn btn-example". -->
+
+    <button class="btn btn-primary"> Primary Button</button>
+    <button class="btn btn-secondary"> Secondary Button</button>
+    <button class="btn btn-success"> Success Button</button>
+    <button class="btn btn-danger"> Danger Button</button>
+    <button class="btn btn-warning"> Warning Button</button>
+    <button class="btn btn-info"> Info Button</button>
+    <button class="btn btn-light"> Light Button</button>
+    <button class="btn btn-dark"> Dark Button</button>
+    <button type="button" class="btn btn-link"> Link </button>
+    <br><br>
+
+    <button class="btn btn-info">
+        Notifications <span class="badge badge-secondary">5</span>
+
+    </button>
+
+    <h3> Invite Friends <span class="badge badge-primary">NEW</span></h3>
+
+    <!-- The following is an example of how you can use bootstrap to easily style a table: -->
+
+    <table class="table table-dark table-hover">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sam</td>
+            <td>sam@gmail.com</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Tom</td>
+            <td>tom@gmail.com</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sally</td>
+            <td>sally@gmail.com</td>
+        </tr>
+    </table>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+
+</body>
+</html>
+
+    <!-- read more up on bootstrap on their website https://getbootstrap.com/ -->
