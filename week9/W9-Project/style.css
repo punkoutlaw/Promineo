@@ -1,0 +1,58 @@
+.navbar-custom {
+    background-color: gray;
+}
+
+h1 {
+    color:azure;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 75px;
+}
+
+h2 {
+    color:azure;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 50px;
+}
+
+.h2-left {
+    color:azure;
+    text-align: left;
+    font-family: fantasy;
+    font-size: 50px;
+}
+
+div {
+    background-color:black;
+    color: white;
+    border-style: none; 
+    border-color: rgb(255, 255, 255); 
+    border-radius: 3px;
+    text-align: center;
+}
+
+.div2 {
+    background-color:gray; 
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.div3 {
+    background-color:black; 
+    text-align: left;
+    font-size: 25px;
+    font-family: fantasy;
+}
+
+.table {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    border-color: black;
+}

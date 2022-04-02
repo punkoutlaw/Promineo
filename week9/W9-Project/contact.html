@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="/Week9/W9-Project/scss/custom.css"></style>
+    <link rel="stylesheet" href="style.css"></style>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
               </li>
             </ul>
             <span class="navbar-text">
-              NEW JERSEY PREMIERE ROCK BAND
+              <b>NEW JERSEY PREMIERE ROCK BAND</b>
             </span>
           </div>
         </div>
@@ -33,27 +34,35 @@
     
       <br>
     
-    <h1>Send inquiries below</h1>
+    <h2 class="h2-left">Send inquiries below</h2>
 
     <br>
 
     <form>
         <div class="col-3">
         <div class="input-text">
+            <div class="div3">
             <span class="input-text">First Name</span>
             <input type="text" aria-label="First name" class="form-control">
+            </div>
         </div>
         <div class="input-text">
+            <div class="div3">
             <span class="input-text">Last Name</span>
             <input type="text" aria-label="Last name" class="form-control">
+            </div>
         </div>
         <div class="mb-3">
+            <div class="div3">
           <label for="Email" class="form-label">Email address</label>
+            </div>
           <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
           <div id="emailHelp" class="form-text">We will never share your email, your privacy matters to us!</div>
         </div>
         <div class="mb-3">
+            <div class="div3">
             <label for="floatingTextarea2">Message</label>
+            </div>
             <textarea class="form-control" placeholder="Your message" id="floatingTextarea2" style="height: 100px"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
