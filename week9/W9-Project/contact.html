@@ -30,7 +30,7 @@
         </li>
         </ul>
         <span class="navbar-text">
-          <b>NEW JERSEY PREMIERE ROCK BAND</b>
+          <b>NEW JERSEY'S PREMIERE ROCK BAND</b>
         </span>
       </div>
     </div>
@@ -40,44 +40,54 @@
     
     <h2>Contact</h2>
 
-    <h3>Send inquiries below</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <br>
+          <h3>Send inquiries below</h3>
+          <form action="mailto:info@feudalerockband.com" 
+          method="POST"
+          enctype="multipart/form-data"
+          name="EmailForm">
+              <div class="col-8">
+              <div class="input-text">
+                  <div class="div3">
+                  <span class="input-text">First Name</span>
+                  </div>
+                  <input type="text" aria-label="First name" class="form-control">
+                  </div>
+              <div class="input-text">
+                  <div class="div3">
+                  <span class="input-text">Last Name</span>
+                  </div>
+                  <input type="text" aria-label="Last name" class="form-control">
+              </div>
+              <div class="mb-3">
+                  <div class="div3">
+                <label for="Email" class="form-label">Email address</label>
+                  </div>
+                <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We will never share your email, your privacy matters to us!</div>
+              </div>
+              <div class="mb-3">
+                  <div class="div3">
+                  <label for="floatingTextarea2">Message</label>
+                  </div>
+                  <textarea class="form-control" placeholder="Your message" id="floatingTextarea2" rows="3"></textarea>
+              </div>
+              <div class="div3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <br><br>
+        <img src="./Images/FEUDALE_edit2.png" class="img-thumbnail rounded d-block w-100" alt="BAND PHOTO">
+      </div>
+    </div>
 
     <br>
-
-    <form action="mailto:info@feudalerockband.com" 
-    method="POST"
-    enctype="multipart/form-data"
-    name="EmailForm">
-        <div class="col-3">
-        <div class="input-text">
-            <div class="div3">
-            <span class="input-text">First Name</span>
-            </div>
-            <input type="text" aria-label="First name" class="form-control">
-            </div>
-        <div class="input-text">
-            <div class="div3">
-            <span class="input-text">Last Name</span>
-            </div>
-            <input type="text" aria-label="Last name" class="form-control">
-        </div>
-        <div class="mb-3">
-            <div class="div3">
-          <label for="Email" class="form-label">Email address</label>
-            </div>
-          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We will never share your email, your privacy matters to us!</div>
-        </div>
-        <div class="mb-3">
-            <div class="div3">
-            <label for="floatingTextarea2">Message</label>
-            </div>
-            <textarea class="form-control" placeholder="Your message" id="floatingTextarea2" rows="3"></textarea>
-        </div>
-        <div class="div3">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
