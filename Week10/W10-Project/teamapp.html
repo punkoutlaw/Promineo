@@ -1,12 +1,48 @@
+<!-- We will be creating a team app where each team will have a table 
+and each table will have the ability to create, update and delete player information 
+
+We will be able to add new teams which will create new html tables 
+and each table will manipulate and manage data for that team. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css">
     <title>Team App</title>
 </head>
-<body>
+<body class="container">
+
+    <br>
     
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="new-team-name">Team Name</label>
+                        <input type="text" class="form-control" id="new-team-name">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button id="new-team" class="btn btn-primary form-control">Create</button>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+
+    <div id="teams">
+
+    </div>
+
+
+    <script src="teamapp.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
 </body>
 </html>
