@@ -9,9 +9,9 @@ and each table will manipulate and manage data for that team.
 // First, we will create our classes:
 
 class Destination {
-    constructor(accomodation, position) {
+    constructor(accomodation, expense) {
         this.accomodation = accomodation;
-        this.position = position
+        this.expense = expense
     }
 }
 
@@ -73,7 +73,7 @@ function drawDOM() {
 function createDestinationRow(trip, table, destination) {
     let row = table.insertRow(2);
     row.insertCell(0).innerHTML = destination.accomodation;
-    row.insertCell(1).innerHTML = destination.position;
+    row.insertCell(1).innerHTML = destination.expense;
     let actions = row.insertCell(2);
     actions.appendChild(createDeleteRowButton(trip, destination));
 }
@@ -107,7 +107,7 @@ function createNewDestinationButton(trip) {
     btn.className = 'btn btn-primary';
     btn.innerHTML = 'Create';
     btn.onclick = () => {
-        trip.destinations.push(new Destination(getValue(`accomodation-input-${trip.id}`), getValue(`position-input-${trip.id}`)));
+        trip.destinations.push(new Destination(getValue(`accomodation-input-${trip.id}`), getValue(`expense-input-${trip.id}`)));
         drawDOM();
     };
     return btn;
@@ -118,29 +118,29 @@ function createTripTable(trip) {
     table.setAttribute('class', 'table table-light table-striped');
     let row = table.insertRow(0);
     let accomodationColumn = document.createElement('th');
-    let positionColumn = document.createElement('th');
+    let expenseColumn = document.createElement('th');
     accomodationColumn.innerHTML = 'Accomodation';
-    positionColumn.innerHTML = 'Cost';
+    expenseColumn.innerHTML = 'Cost';
     row.appendChild(accomodationColumn);
-    row.appendChild(positionColumn);
+    row.appendChild(expenseColumn);
     let formRow = table.insertRow(1);
     let accomodationTh = document.createElement('th');
-    let positionTh = document.createElement('th');
+    let expenseTh = document.createElement('th');
     let createTh = document.createElement('th');
     let accomodationInput = document.createElement('input');
     accomodationInput.setAttribute('id', `accomodation-input-${trip.id}`);
     accomodationInput.setAttribute('type', 'text');
     accomodationInput.setAttribute('class', 'form-control');
-    let positionInput = document.createElement('input');
-    positionInput.setAttribute('id', `position-input-${trip.id}`);
-    positionInput.setAttribute('type', 'text');
-    positionInput.setAttribute('class', 'form-control');
+    let expenseInput = document.createElement('input');
+    expenseInput.setAttribute('id', `expense-input-${trip.id}`);
+    expenseInput.setAttribute('type', 'text');
+    expenseInput.setAttribute('class', 'form-control');
     let newDestinationButton = createNewDestinationButton(trip);
     accomodationTh.appendChild(accomodationInput);
-    positionTh.appendChild(positionInput);
+    expenseTh.appendChild(expenseInput);
     createTh.appendChild(newDestinationButton);
     formRow.appendChild(accomodationTh);
-    formRow.appendChild(positionTh);
+    formRow.appendChild(expenseTh);
     formRow.appendChild(createTh);
     return table;
 }
