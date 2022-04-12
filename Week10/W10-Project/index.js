@@ -1,8 +1,4 @@
-/* We will be creating a team app where each team will have a table 
-and each table will have the ability to create, update and delete player information 
-
-We will be able to add new teams which will create new html tables 
-and each table will manipulate and manage data for that team.
+/* We will be creating a Vaction Planning app where you will be able to schedule your trips, manage expenses and plan.
 
 */
 
@@ -19,20 +15,20 @@ class Trip {
     constructor(id, accomodation) {
         this.id = id;
         this.accomodation = accomodation;
-        this.destinations = []; // This wont be passed in but it will start as an empty array which will be all the members added to the team.
+        this.destinations = []; // This wont be passed in but it will start as an empty array which will be all the trips added to your schedule.
     }
 
     addDestination(destination) {
-        this.destinations.push(destination) // This will add memebers to the team.
+        this.destinations.push(destination) // This will add destinations to your schedule
     }
 
     deleteDestination(destination) {
         let index = this.destinations.indexOf(destination);
-        this.destinations.splice(index, 1); // This will delete members from the team.
+        this.destinations.splice(index, 1); // This will delete destinations from your schedule.
     }
 }
 
-// Next, we will write the code which will use our classes in relationship witht he HTML.
+// Next, we will write the code which will use our classes in relationship with the HTML.
 
 let trips = [];
 let tripId = 0;
@@ -41,7 +37,7 @@ let tripId = 0;
 
 onClick('new-trip', () => {
     trips.push(new Trip(tripId++, getValue('new-trip-accomodation')));
-    drawDOM(); // This will iterate over our teams array and build tables.
+    drawDOM(); // This will iterate over our destinations array and build tables.
 })
 
 function onClick(id, action) {
@@ -65,7 +61,7 @@ function drawDOM() {
         tripDiv.appendChild(title);
         tripDiv.appendChild(table);
         for (destination of trip.destinations) {
-            createDestinationRow(trip, table, destination); // This will take the team, table & member and create a new row.
+            createDestinationRow(trip, table, destination); // This will take the destination, table & trip and create a new row.
         }
     }
 }
@@ -154,18 +150,18 @@ function clearElement(element) {
 let id = 0;
 
 document.getElementById('add').addEventListener('click', () => {
-    let createdDate = new Date();
     let table = document.getElementById('list');
     let row = table.insertRow(1);
     row.setAttribute('id', `item-${id}`);
     row.insertCell(0).innerHTML = document.getElementById('new-task').value;
-    row.insertCell(1).innerHTML = `${createdDate.getHours()}-${createdDate.getMinutes()}-${createdDate.getFullYear()}-${createdDate.getMonth() + 1}-${createdDate.getDate()}`;
+    row.insertCell(1).innerHTML = document.getElementById('new-time').value;
     row.insertCell(2).innerHTML = document.getElementById('new-start-date').value;
-    row.insertCell(2).innerHTML = document.getElementById('new-end-date').value;
+    row.insertCell(3).innerHTML = document.getElementById('new-end-date').value;
     let actions = row.insertCell(4);
     actions.appendChild(createDeleteButton(id++));
     document.getElementById('new-task').value = '';
 });
+
 
 
 // This function will create a button and bind it to a method or function to the buttons on-click properties.
