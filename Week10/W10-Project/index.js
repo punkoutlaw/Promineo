@@ -8,7 +8,7 @@ and each table will manipulate and manage data for that team.
 
 // First, we will create our classes:
 
-class Member {
+class Destination {
     constructor(accomodation, position) {
         this.accomodation = accomodation;
         this.position = position
@@ -19,16 +19,16 @@ class Trip {
     constructor(id, accomodation) {
         this.id = id;
         this.accomodation = accomodation;
-        this.members = []; // This wont be passed in but it will start as an empty array which will be all the members added to the team.
+        this.destinations = []; // This wont be passed in but it will start as an empty array which will be all the members added to the team.
     }
 
-    addMember(member) {
-        this.members.push(member) // This will add memebers to the team.
+    addDestination(destination) {
+        this.destinations.push(destination) // This will add memebers to the team.
     }
 
-    deleteMember(member) {
-        let index = this.members.indexOf(member);
-        this.members.splice(index, 1); // This will delete members from the team.
+    deleteDestination(destination) {
+        let index = this.destinations.indexOf(destination);
+        this.destinations.splice(index, 1); // This will delete members from the team.
     }
 }
 
@@ -64,27 +64,27 @@ function drawDOM() {
         title.appendChild(createDeleteTripButton(trip));
         tripDiv.appendChild(title);
         tripDiv.appendChild(table);
-        for (member of trip.members) {
-            createMemberRow(trip, table, member); // This will take the team, table & member and create a new row.
+        for (destination of trip.destinations) {
+            createDestinationRow(trip, table, destination); // This will take the team, table & member and create a new row.
         }
     }
 }
 
-function createMemberRow(trip, table, member) {
+function createDestinationRow(trip, table, destination) {
     let row = table.insertRow(2);
-    row.insertCell(0).innerHTML = member.accomodation;
-    row.insertCell(1).innerHTML = member.position;
+    row.insertCell(0).innerHTML = destination.accomodation;
+    row.insertCell(1).innerHTML = destination.position;
     let actions = row.insertCell(2);
-    actions.appendChild(createDeleteRowButton(trip, member));
+    actions.appendChild(createDeleteRowButton(trip, destination));
 }
 
-function createDeleteRowButton(trip, member) {
+function createDeleteRowButton(trip, destination) {
     let btn = document.createElement('button');
     btn.className = 'btn btn-primary';
     btn.innerHTML = 'Delete';
     btn.onclick = () => {
-        let index = trip.members.indexOf(member);
-        trip.members.splice(index, 1);
+        let index = trip.destinations.indexOf(destination);
+        trip.destinations.splice(index, 1);
         drawDOM();
     };
     return btn;
@@ -102,12 +102,12 @@ function createDeleteTripButton(trip) {
     return btn;
 }
 
-function createNewMemberButton(trip) {
+function createNewDestinationButton(trip) {
     let btn = document.createElement('button');
     btn.className = 'btn btn-primary';
     btn.innerHTML = 'Create';
     btn.onclick = () => {
-        trip.members.push(new Member(getValue(`accomodation-input-${trip.id}`), getValue(`position-input-${trip.id}`)));
+        trip.destinations.push(new Destination(getValue(`accomodation-input-${trip.id}`), getValue(`position-input-${trip.id}`)));
         drawDOM();
     };
     return btn;
@@ -135,10 +135,10 @@ function createTripTable(trip) {
     positionInput.setAttribute('id', `position-input-${trip.id}`);
     positionInput.setAttribute('type', 'text');
     positionInput.setAttribute('class', 'form-control');
-    let newMemberButton = createNewMemberButton(trip);
+    let newDestinationButton = createNewDestinationButton(trip);
     accomodationTh.appendChild(accomodationInput);
     positionTh.appendChild(positionInput);
-    createTh.appendChild(newMemberButton);
+    createTh.appendChild(newDestinationButton);
     formRow.appendChild(accomodationTh);
     formRow.appendChild(positionTh);
     formRow.appendChild(createTh);
