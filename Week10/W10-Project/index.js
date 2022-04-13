@@ -1,47 +1,43 @@
-/* We will be creating a team app where each team will have a table 
-and each table will have the ability to create, update and delete player information 
-
-We will be able to add new teams which will create new html tables 
-and each table will manipulate and manage data for that team.
+/* We will be creating a Vaction Planning app where you will be able to schedule your trips, manage expenses and plan.
 
 */
 
 // First, we will create our classes:
 
-class Member {
-    constructor(name, position) {
-        this.name = name;
-        this.position = position
+class Destination {
+    constructor(accomodation, expense) {
+        this.accomodation = accomodation;
+        this.expense = expense
     }
 }
 
-class Team {
-    constructor(id, name) {
+class Trip {
+    constructor(id, accomodation) {
         this.id = id;
-        this.name = name;
-        this.members = []; // This wont be passed in but it will start as an empty array which will be all the members added to the team.
+        this.accomodation = accomodation;
+        this.destinations = []; // This wont be passed in but it will start as an empty array which will be all the trips added to your schedule.
     }
 
-    addMember(member) {
-        this.members.push(member) // This will add memebers to the team.
+    addDestination(destination) {
+        this.destinations.push(destination) // This will add destinations to your schedule
     }
 
-    deleteMember(member) {
-        let index = this.members.indexOf(member);
-        this.members.splice(index, 1); // This will delete members from the team.
+    deleteDestination(destination) {
+        let index = this.destinations.indexOf(destination);
+        this.destinations.splice(index, 1); // This will delete destinations from your schedule.
     }
 }
 
-// Next, we will write the code which will use our classes in relationship witht he HTML.
+// Next, we will write the code which will use our classes in relationship with the HTML.
 
-let teams = [];
-let teamId = 0;
+let trips = [];
+let tripId = 0;
 
 // Now we will create a function that will make it easier to add/identify event listeners:
 
-onClick('new-team', () => {
-    teams.push(new Team(teamId++, getValue('new-team-name')));
-    drawDOM(); // This will iterate over our teams array and build tables.
+onClick('new-trip', () => {
+    trips.push(new Trip(tripId++, getValue('new-trip-accomodation')));
+    drawDOM(); // This will iterate over our destinations array and build tables.
 })
 
 function onClick(id, action) {
@@ -55,92 +51,92 @@ function getValue(id) {
 }
 
 function drawDOM() {
-    let teamDiv = document.getElementById('teams');
-    clearElement(teamDiv);
-    for (team of teams) {
-        let table = createTeamTable(team);
+    let tripDiv = document.getElementById('trips');
+    clearElement(tripDiv);
+    for (trip of trips) {
+        let table = createTripTable(trip);
         let title = document.createElement('h2');
-        title.innerHTML = team.name;
-        title.appendChild(createDeleteTeamButton(team));
-        teamDiv.appendChild(title);
-        teamDiv.appendChild(table);
-        for (member of team.members) {
-            createMemberRow(team, table, member); // This will take the team, table & member and create a new row.
+        title.innerHTML = trip.accomodation;
+        title.appendChild(createDeleteTripButton(trip));
+        tripDiv.appendChild(title);
+        tripDiv.appendChild(table);
+        for (destination of trip.destinations) {
+            createDestinationRow(trip, table, destination); // This will take the destination, table & trip and create a new row.
         }
     }
 }
 
-function createMemberRow(team, table, member) {
+function createDestinationRow(trip, table, destination) {
     let row = table.insertRow(2);
-    row.insertCell(0).innerHTML = member.name;
-    row.insertCell(1).innerHTML = member.position;
+    row.insertCell(0).innerHTML = destination.accomodation;
+    row.insertCell(1).innerHTML = destination.expense;
     let actions = row.insertCell(2);
-    actions.appendChild(createDeleteRowButton(team, member));
+    actions.appendChild(createDeleteRowButton(trip, destination));
 }
 
-function createDeleteRowButton(team, member) {
+function createDeleteRowButton(trip, destination) {
     let btn = document.createElement('button');
     btn.className = 'btn btn-primary';
     btn.innerHTML = 'Delete';
     btn.onclick = () => {
-        let index = team.members.indexOf(member);
-        team.members.splice(index, 1);
+        let index = trip.destinations.indexOf(destination);
+        trip.destinations.splice(index, 1);
         drawDOM();
     };
     return btn;
 }
 
-function createDeleteTeamButton(team) {
+function createDeleteTripButton(trip) {
     let btn = document.createElement('button');
     btn.className = 'btn btn-primary';
     btn.innerHTML = 'Delete Trip';
     btn.onclick = () => {
-        let index = teams.indexOf(team);
-        teams.splice(index, 1);
+        let index = trips.indexOf(trip);
+        trips.splice(index, 1);
         drawDOM();
     };
     return btn;
 }
 
-function createNewMemberButton(team) {
+function createNewDestinationButton(trip) {
     let btn = document.createElement('button');
     btn.className = 'btn btn-primary';
     btn.innerHTML = 'Create';
     btn.onclick = () => {
-        team.members.push(new Member(getValue(`name-input-${team.id}`), getValue(`position-input-${team.id}`)));
+        trip.destinations.push(new Destination(getValue(`accomodation-input-${trip.id}`), getValue(`expense-input-${trip.id}`)));
         drawDOM();
     };
     return btn;
 }
 
-function createTeamTable(team) {
+function createTripTable(trip) {
     let table = document.createElement('table');
     table.setAttribute('class', 'table table-light table-striped');
-    let row =table.insertRow(0);
-    let nameColumn = document.createElement('th');
-    let positionColumn = document.createElement('th');
-    nameColumn.innerHTML = 'Accomodation';
-    positionColumn.innerHTML = 'Cost';
-    row.appendChild(nameColumn);
-    row.appendChild(positionColumn);
+    let row = table.insertRow(0);
+    let accomodationColumn = document.createElement('th');
+    let expenseColumn = document.createElement('th');
+    accomodationColumn.innerHTML = 'Accomodation';
+    expenseColumn.innerHTML = 'Cost';
+    row.appendChild(accomodationColumn);
+    row.appendChild(expenseColumn);
     let formRow = table.insertRow(1);
-    let nameTh = document.createElement('th');
-    let positionTh = document.createElement('th');
+    let accomodationTh = document.createElement('th');
+    let expenseTh = document.createElement('th');
     let createTh = document.createElement('th');
-    let nameInput = document.createElement('input');
-    nameInput.setAttribute('id', `name-input-${team.id}`);
-    nameInput.setAttribute('type', 'text');
-    nameInput.setAttribute('class', 'form-control');
-    let positionInput = document.createElement('input');
-    positionInput.setAttribute('id', `position-input-${team.id}`);
-    positionInput.setAttribute('type', 'text');
-    positionInput.setAttribute('class', 'form-control');
-    let newMemberButton = createNewMemberButton(team);
-    nameTh.appendChild(nameInput);
-    positionTh.appendChild(positionInput);
-    createTh.appendChild(newMemberButton);
-    formRow.appendChild(nameTh);
-    formRow.appendChild(positionTh);
+    let accomodationInput = document.createElement('input');
+    accomodationInput.setAttribute('id', `accomodation-input-${trip.id}`);
+    accomodationInput.setAttribute('type', 'text');
+    accomodationInput.setAttribute('class', 'form-control');
+    let expenseInput = document.createElement('input');
+    expenseInput.setAttribute('id', `expense-input-${trip.id}`);
+    expenseInput.setAttribute('type', 'text');
+    expenseInput.setAttribute('class', 'form-control');
+    let newDestinationButton = createNewDestinationButton(trip);
+    accomodationTh.appendChild(accomodationInput);
+    expenseTh.appendChild(expenseInput);
+    createTh.appendChild(newDestinationButton);
+    formRow.appendChild(accomodationTh);
+    formRow.appendChild(expenseTh);
     formRow.appendChild(createTh);
     return table;
 }
@@ -154,18 +150,18 @@ function clearElement(element) {
 let id = 0;
 
 document.getElementById('add').addEventListener('click', () => {
-    let createdDate = new Date();
     let table = document.getElementById('list');
     let row = table.insertRow(1);
     row.setAttribute('id', `item-${id}`);
     row.insertCell(0).innerHTML = document.getElementById('new-task').value;
-    row.insertCell(1).innerHTML = `${createdDate.getFullYear()}-${createdDate.getMonth() + 1}-${createdDate.getDate()}`;
+    row.insertCell(1).innerHTML = document.getElementById('new-time').value;
     row.insertCell(2).innerHTML = document.getElementById('new-start-date').value;
-    row.insertCell(2).innerHTML = document.getElementById('new-end-date').value;
+    row.insertCell(3).innerHTML = document.getElementById('new-end-date').value;
     let actions = row.insertCell(4);
     actions.appendChild(createDeleteButton(id++));
     document.getElementById('new-task').value = '';
 });
+
 
 
 // This function will create a button and bind it to a method or function to the buttons on-click properties.
