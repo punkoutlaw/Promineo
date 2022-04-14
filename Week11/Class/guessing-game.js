@@ -10,3 +10,7 @@ $('text').on('blur', function() {
     userGuess = $('#text').val();
     console.log(userGuess)
 });
+
+function checkGuess(){
+    if(userGuess > randomValue) 
+} console.log('user is too high');
