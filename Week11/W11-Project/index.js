@@ -1,7 +1,10 @@
-// Function called whenever user tab on any box
+// LET'S PLAY TIC TAC TOE \\
+
+
+// The function will be called whenever the user clicks on a box:
 function myfunc() {
  
-    // Setting DOM to all boxes or input field
+    // Setting the DOM to all boxes or input field
     var b1, b2, b3, b4, b5, b6, b7, b8, b9;
     b1 = document.getElementById("b1").value;
     b2 = document.getElementById("b2").value;
@@ -13,8 +16,7 @@ function myfunc() {
     b8 = document.getElementById("b8").value;
     b9 = document.getElementById("b9").value;
  
-    // Checking if Player X won or not and after
-    // that disabled all the other fields
+    // Checking if Player 1 has won, all other fields will be disabled:
     if ((b1 == 'x' || b1 == 'X') && (b2 == 'x' ||
         b2 == 'X') && (b3 == 'x' || b3 == 'X')) {
         document.getElementById('print')
@@ -113,9 +115,7 @@ function myfunc() {
         window.alert('Player 1 won');
     }
  
-    // Checking of Player X finish
-    // Checking for Player 0 starts, Is player 0 won or
-    // not and after that disabled all the other fields
+    // Checking if Player 2 has won, all other fields will be disabled:
     else if ((b1 == 'O' || b1 == 'O') && (b2 == 'O' ||
         b2 == 'O') && (b3 == 'O' || b3 == 'O')) {
         document.getElementById('print')
@@ -213,21 +213,20 @@ function myfunc() {
         window.alert('Player 2 won');
     }
  
-    // Checking of Player 0 finish
-    // Here, Checking about Tie
-    else if ((b1 == 'X' || b1 == '0') && (b2 == 'X'
-        || b2 == '0') && (b3 == 'X' || b3 == '0') &&
-        (b4 == 'X' || b4 == '0') && (b5 == 'X' ||
-        b5 == '0') && (b6 == 'X' || b6 == '0') &&
-        (b7 == 'X' || b7 == '0') && (b8 == 'X' ||
-        b8 == '0') && (b9 == 'X' || b9 == '0')) {
+    // The following will check if there is a tie:
+    else if ((b1 == 'X' || b1 == 'O') && (b2 == 'X'
+        || b2 == 'O') && (b3 == 'X' || b3 == 'O') &&
+        (b4 == 'X' || b4 == 'O') && (b5 == 'X' ||
+        b5 == 'O') && (b6 == 'X' || b6 == 'O') &&
+        (b7 == 'X' || b7 == 'O') && (b8 == 'X' ||
+        b8 == 'O') && (b9 == 'X' || b9 == 'O')) {
             document.getElementById('print')
                 .innerHTML = "Its a tie!";
             window.alert('Its a tie!');
     }
     else {
  
-        // Here, Printing Result
+        // Here we are printing the result:
         if (flag == 1) {
             document.getElementById('print')
                 .innerHTML = "Player 1 Turn";
@@ -239,7 +238,7 @@ function myfunc() {
     }
 }
  
-// Function to reset game
+// Here's the function to reset the game:
 function myfunc_2() {
     location.reload();
     document.getElementById('b1').value = '';
@@ -254,8 +253,7 @@ function myfunc_2() {
  
 }
  
-// Here onwards, functions check turn of the player
-// and put accordingly value X or 0
+// The following functions will check the turn of the player:
 flag = 1;
 function myfunc_3() {
     if (flag == 1) {

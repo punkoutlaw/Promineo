@@ -1,8 +1,5 @@
-/* CSS Code */
-/* Heading */
-
 body {
-    background-color: beige;
+    background-color: whitesmoke;
 }
 
 h1 {
@@ -38,13 +35,23 @@ h1 {
     cursor: pointer;
 }
 
-/* Player turn space */
-#print {
-    font-family: Verdana,
-        Geneva, Tahoma, sans-serif;
+button:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffe710;
+  }
+  
+button:hover {
+    color: #ffee10;
+    box-shadow: 0 0 5px #ffe710;
+    text-shadow: 0 0 5px #ffe710;
+  }
 
-    color: dodgerblue;
-    font-size: 20px;
+/* Player turn read-out text */
+#print {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    color: rgb(26, 121, 216);
+    font-size: 25px;
 }
 
 /* Main Container */
@@ -54,9 +61,8 @@ h1 {
 
 /* Game Instruction Text */
 #ins {
-    font-family: Verdana,
-        Geneva, Tahoma, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             
-    color: dodgerblue;
-    font-size: 17px;
+    color: rgb(26, 121, 216);
+    font-size: 20px;
 }
