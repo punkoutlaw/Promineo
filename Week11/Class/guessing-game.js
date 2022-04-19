@@ -6,8 +6,8 @@ let userGuess = -1;
 
 console.log(randomValue);
 
-$('#number').on('blur', function() {
-    userGuess = $('#number').val();
+$('#text').on('blur', function() {
+    userGuess = $('#text').val();
     console.log(userGuess);
     checkGuess();
 });
