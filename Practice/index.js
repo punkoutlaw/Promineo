@@ -1,4 +1,4 @@
-// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers. \\
 
 let number = 8;
 
@@ -10,7 +10,7 @@ function even_or_odd(number) {
   }
 } console.log(even_or_odd(number));
 
-// Write a function that will check if two given characters are the same case.
+// Write a function that will check if two given characters are the same case. \\
 
 /* If either of the characters is not a letter, return -1
 If both characters are the same case, return 1
@@ -44,3 +44,22 @@ if(a.toUpperCase() === a.toLowerCase() || b.toLowerCase() === b.toUpperCase()) {
     return 0
     }
 } console.log(sameCase('b', 'C'));
+
+// You get an array of numbers, return the sum of all of the positives ones. \\
+
+/* Example [1,-4,7,12] => 1 + 7 + 12 = 20
+
+Note: if there is nothing to sum, the sum is default to 0.
+*/
+
+var arr = [1,-4,7,12];
+
+// var even = arr.filter(x => {
+//     return x % 2 === 0;
+// }); 
+// console.log(even);
+// console.log(even.reduce((a, b) => a + b, 0));
+
+function positiveSum(arr) {
+    return arr.filter(x => x > 0).reduce((a, b) => a+b, 0);
+};
