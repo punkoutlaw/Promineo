@@ -21,7 +21,9 @@ $.ajax({
     url: `https://crudcrud.com/api/04429cdb49c44e63bd05cb760c66cc3d/${entity}`,
     data: data,
     dataType: 'json',
-    success: success
+    success: (returnedData) => {
+        
+    }
 });
 
 function success(data) {
