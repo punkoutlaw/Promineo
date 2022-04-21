@@ -12,7 +12,6 @@ class Cars {
     color
     year
     bodyType
-    mileage
 
     constructor(make, model, color, year, bodyType, mileage) {
         this.make = make;
@@ -20,6 +19,5 @@ class Cars {
         this.color = color;
         this.year = year;
         this.bodyType = bodyType
-        this.mileage = mileage;
     }
 }
