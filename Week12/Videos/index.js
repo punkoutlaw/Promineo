@@ -56,6 +56,52 @@ class DOMManager {
         HouseService.getAllHouses().then(houses => this.render(houses));
     }
 
+    static createHouse(name) {
+        HouseService.createHouse(new House(name))
+            .then(() => {
+                return HouseService.getAllHouses();
+            })
+            .then((houses) => this.render(houses));
+    }
+
+    static deleteHouse(id) {
+        HouseService.deleteHouse(id)
+            .then(() => {
+                return HouseService.getAllHouses();
+            })
+            .then((houses) => this.render(houses));
+    }
+
+    static addRoom(id) {
+        for(let house of this.houses) {
+            if(house._id == id) {
+                house.rooms.push(new Room($(`#${house._id}-room-name`).val(), $(`#${house._id}-room-area`).val()));
+                HouseService.updateHouse(house)
+                    .then(() => {
+                        return HouseService.getAllHouses();
+                    })
+                    .then((houses) => this.render(houses));
+            }
+        }
+    }
+
+    static deleteRoom(houseId, roomId) {
+        for(let house of this.houses) {
+            if(house._id == houseId) {
+                for(let room of house.rooms) {
+                    if(room._id == roomId) {
+                        house.rooms.splice(house.rooms.indexOf(room), 1);
+                        HouseService.updateHouse(house)
+                        .then(() => {
+                            return HouseService.getAllHouses();
+                        })
+                        .then((houses) => this.render(houses));
+                    }
+                }
+            }
+        }
+    }
+
     static render(houses) {
         this.houses = houses;
         $('#app').empty();
@@ -93,5 +139,10 @@ class DOMManager {
     }
 
 }
+
+$('#create-new-house').click(() => {
+    DOMManager.createHouse($('#new-house-name').val());
+    $('#new-house-name').val('');
+});
 
 DOMManager.getAllHouses();
