@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 12 Project</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Week 12 CRUD Application</title>
 </head>
-<body>
+<body class="container">
+
+    <br>
+
+    <div class="title">
+        <h2> To-do List</h2>
+    </div>
+    <div class="form">
+        <form action="javascript:void(0);" method="POST"
+        onsubmit="app.Add()">
+            <input type="text" id="add-to-do" placeholder="My To-do List">
+            <input type="submit" value="Add" class="btn btn-primary">
+
     
+        </form>
+
+        <br>
+
+        <p>My Checklist:</p>
+        <p id="counter"></p>
+
+        <div class="card">
+        
+        <table>
+            <tr class="to-do">
+                <th><h3>To-do:</h3></th>
+            </tr>
+            <tbody id="tasks">
+            </tbody>
+        </table>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div id="edit-box" role="aria-hidden">
+        <form action="javascript:void(0);" method="POST" id="save-edit">
+            <input type="text" id="edit-to-do" placeholder="Edit">
+            <input type="submit" value="Save" class="btn btn-success">
+            <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

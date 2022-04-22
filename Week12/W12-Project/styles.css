@@ -1,0 +1,28 @@
+.title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form {
+    margin: auto;
+    max-width: 80%;
+    text-align: left;
+}
+
+#edit-box {
+    display: none;
+    margin: auto;
+    margin-top: 10px;
+    max-width: 80%;
+    text-align: left;
+}
+
+td {
+    background-color: aliceblue;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.to-do {
+    background: transparent !important;
+}
