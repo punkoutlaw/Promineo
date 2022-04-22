@@ -1,6 +1,14 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .title {
     text-align: center;
     margin-top: 50px;
+}
+
+h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .form {
@@ -18,11 +26,20 @@
 }
 
 td {
-    background-color: aliceblue;
+    background-color:lightblue;
     padding-right: 10px;
     text-align: left;
 }
 
 .to-do {
     background: transparent !important;
+}
+
+#counter {
+    text-align: center;
+}
+
+#list {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: large;
 }
