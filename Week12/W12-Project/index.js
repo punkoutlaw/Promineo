@@ -47,7 +47,7 @@ var app = new function() {
                 data += '<tr>';
                 data += '<td>' + (i + 1) + ". " + this.tasks[i] + '</td>';
                 data += '<td><button onclick="app.Edit('+i+')" class="btn btn-warning">Edit</button></td>';
-                data += '<td><button onclick="app.Edit('+i+')" class="btn btn-danger">Delete</button></td>';
+                data += '<td><button onclick="app.Delete('+i+')" class="btn btn-danger">Delete</button></td>';
                 data += '</tr>'   
             }
         }
@@ -58,16 +58,41 @@ var app = new function() {
 
     // UPDATE \\
     this.Edit = function(item) {
+        el = document.getElementById('edit-to-do');
+        el.value = this.tasks[item]
+        document.getElementById('edit-box').style.display = "block";
+        self=this;
+
+        document.getElementById('save-edit').onsubmit = function() {
+            var task = el.value;
+            if(task) {
+                self.tasks.splice(item, 1, task.trim());
+                self.FetchAll();
+                CloseInput();
+            }
+        }
 
     };
 
     // DELETE \\
     this.Delete = function(item) {
-        
+        this.tasks.splice(item, 1)
+        this.FetchAll();
+
     };
 
     this.Count = function(data) {
-
+        var el = document.getElementById('counter');
+        var name = 'Tasks';
+        if(data){
+            if(data == 1) {
+                name = 'Task';
+            }
+            el.innerHTML = data + ' ' + name;
+        }
+        else {
+            el.innerHTML = "No " + name;
+        }
     };
 
 }
