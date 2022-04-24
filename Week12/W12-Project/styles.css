@@ -7,6 +7,12 @@ body {
     margin-top: 50px;
 }
 
+.navbar {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: large;
+    border-style: ridge;
+}
+
 h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
