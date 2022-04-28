@@ -6,10 +6,23 @@ import App from './App';
 import NewsFeed from './components/news-feed';
 import reportWebVitals from './reportWebVitals';
 
+// JSX METHOD \\
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <NewsFeed />
+);
+
+/*
+
+// ORIGINAL "React.createElement" METHOD USING JAVASCRIPT \\
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   React.createElement(NewsFeed, {}, null),
 );
+
+*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
