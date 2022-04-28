@@ -1,4 +1,4 @@
-1) To create a template without having to do everything manually, run "npx create-react-app test-app".
+1) To create a template without having to do everything manually (boilerplate code), run "npx create-react-app test-app".
 
 2) *Note* - in the cmd line, "test-app" will be the name of the directory you are creating!
 
