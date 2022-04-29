@@ -8,6 +8,8 @@ class LoginPage extends React.Component {
         return (
             <div className="container">
                 <NavBar />
+                <br></br>
+                <br></br>
                 <UserInput />
             </div>
         );

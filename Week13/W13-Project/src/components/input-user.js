@@ -4,19 +4,22 @@ import MyButton from "./button";
 class UserInput extends React.Component {
     render () {
         return (
-            <div className="card">
-                <div className="card-header">
+            <div className="card w-25 mx-auto border-primary">
+                <div className="card-header bg-light border-primary">
                     <h3>Login Info</h3>
-                        <div>
-                            <input type='text' placeholder="Username"></input>
-                            <br></br>
-                            <br></br>
-                            <input type='text' placeholder="Password"></input>
-                            <br></br>
-                            <br></br>
-                            <MyButton />
-                        </div>
                 </div>
+                    <div>
+                        <br></br>
+                        <input type='text' className="form-control" placeholder="Username"></input>
+                        <br></br>
+                        <br></br>
+                        <input type='password' className="form-control" placeholder="Password"></input>
+                        <br></br>
+                        <br></br>
+                        <MyButton />
+                        <br></br>
+                        <br></br>
+                    </div>
             </div>
         );
     }
