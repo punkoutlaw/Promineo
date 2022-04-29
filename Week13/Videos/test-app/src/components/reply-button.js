@@ -2,7 +2,7 @@ import React from 'react';
 
 // JSX METHOD \\
 
-export default class LikeButtom extends React.Component {
+export default class LikeButton extends React.Component {
     render() {
         return (
             <button className='btn btn-primary'>Reply</button>

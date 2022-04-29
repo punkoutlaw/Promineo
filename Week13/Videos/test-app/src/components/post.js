@@ -2,7 +2,6 @@ import React from 'react';
 import ReplyButton from './reply-button';
 import LikeButton from './like-button';
 import Comment from './comment';
-import LikeButtom from './reply-button';
 
 // JSX METHOD \\
 
@@ -17,7 +16,7 @@ export default class Post extends React.Component {
                         Post Content
                     </div>
                     <div className='card-footer'>
-                        <LikeButtom />
+                        <LikeButton />
                         <ReplyButton />
                         <Comment />
                         <Comment />
