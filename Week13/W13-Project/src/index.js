@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import InputBox from './components/input-password';
 import reportWebVitals from './reportWebVitals';
+import LoginPage from './components/login-page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- <InputBox />
+ <LoginPage />
 );
 
 // If you want to start measuring performance in your app, pass a function

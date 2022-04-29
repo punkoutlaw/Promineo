@@ -3,7 +3,7 @@ import React from "react";
 class MyButton extends React.Component {
     render () {
         return (
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-primary" value="submit">Login</button>
         );
     }
 }
