@@ -8,7 +8,7 @@ class UserInput extends React.Component {
                 <div className="card-header bg-primary border-primary">
                     <h3>Login Info</h3>
                 </div>
-                    <div>
+                    <div className="card-body">
                         <br></br>
                         <input type='text' className="form-control" placeholder="Username"></input>
                         <br></br>
