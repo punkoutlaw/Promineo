@@ -4,6 +4,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   font-size: large;
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("https://th.bing.com/th/id/R.bbeaeebc1b78f68c5d2e511a5fca2818?rik=bBCC5N2xMiMjlw&pid=ImgRaw&r=0");
@@ -15,6 +16,18 @@ code {
     monospace;
 }
 
+.navbar {
+  background-color: cornflowerblue !important; 
+}
+
 h3 {
   font-family: 'Berlin Sans FB';
+}
+
+p {
+  color: lightslategray;
+}
+
+.card-header {
+  background-color: cornflowerblue !important;
 }

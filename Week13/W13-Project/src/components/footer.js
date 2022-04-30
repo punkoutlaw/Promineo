@@ -3,8 +3,8 @@ import React from "react";
 class Footer extends React.Component {
     render() {
         return(
-            <div class="card mx-auto border-primary">
-                <div class="card-header">
+            <div class="card mx-auto w-50 border-primary">
+                <div class="card-header bg-primary">
                     Inspirational Quote
                 </div>
                 <div class="card-body">
