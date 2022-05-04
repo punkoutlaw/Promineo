@@ -3,7 +3,50 @@ import ReplyButton from './reply-button';
 import LikeButton from './like-button';
 import Comment from './comment';
 
-// JSX METHOD \\
+// ADDING PROPS INTO REACT, METHOD 2 \\
+
+export default class Post extends React.Component {
+    render() {
+        let commentOne = {
+            content: 'This is my post.',
+            username: 'David',
+            date: '5/2/2022'
+        };
+        let commentTwo = {
+            content: 'No, this is my post!',
+            username: 'Mike',
+            date: '5/3/2022'
+        };
+        let commentThree = {
+            content: 'Stop copying my comments y\'all.',
+            username: 'Bry',
+            date: '5/4/2022'
+        };
+        return (
+            <div className='card w-75'>
+                <div className='card-header bg-primary text-white'>
+                    Username and Time
+                </div>
+                    <div className='card-body'>
+                        Post Content
+                    </div>
+                    <div className='card-footer'>
+                        <LikeButton />
+                        <ReplyButton />
+                        <Comment {...commentOne}/>
+                        <Comment {...commentTwo}/>
+                        <Comment {...commentThree}/>
+                    </div>
+            </div>
+        );
+    }
+}
+
+/*
+
+// ADDING PROPS INTO REACT, METHOD 1 \\
+
+You can add a prop to the end of your component using the syntax "<MyComponent content="This is my prop content." w/ "content" being the name of your prop."
 
 export default class Post extends React.Component {
     render() {
@@ -18,34 +61,11 @@ export default class Post extends React.Component {
                     <div className='card-footer'>
                         <LikeButton />
                         <ReplyButton />
-                        <Comment />
-                        <Comment />
-                        <Comment />
+                        <Comment content="This is my post."/>
+                        <Comment content="No, this is my post!"/>
+                        <Comment content="Stop copying my comments y'all."/>
                     </div>
             </div>
-        );
-    }
-}
-
-/*
-
-// ORIGINAL "React.createElement" METHOD USING JAVASCRIPT \\
-
-let e = React.createElement;
-
-export default class Post extends React.Component {
-    render() {
-        return e('div', 
-            {class: 'card w-75'},
-            e('div', {class: 'card-hearder bg-primary text-white'}, 'Username and Time'),
-            e('div', {class: 'card-body'}, 'Post Content'),
-            e('div', {class: 'card-footer'},
-            e(LikeButton, {}, null),
-            e('span', {}, ' '),
-            e(ReplyButton, {}, null),
-            e('br', {}, null),
-            e(Comment, {}, null),
-            e(Comment, {}, null))
         );
     }
 }

@@ -2,17 +2,23 @@ import React from "react";
 import LikeButton from "./like-button";
 import ReplyButton from "./reply-button";
 
-// JSX METHOD \\
+/* 
+
+// ADDING PROPS INTO REACT, METHOD 2 \\
+
+Note, to access props, you would use the syntax "{this.props.yourpropId}" w/ "yourpropId" being a placeholder for whatever your prop is named.
+
+*/
 
 export default class Comment extends React.Component {
     render() {
         return (
             <div className="card w-75">
                 <div className="card-header bg-primary text-white">
-                    Username and Time
+                    {this.props.username} {this.props.date}
                 </div>
                 <div className="card-body">
-                    Comment Content
+                    {this.props.content} 
                 </div>
                 <div className="card-footer">
                     <LikeButton />
@@ -25,20 +31,23 @@ export default class Comment extends React.Component {
 
 /* 
 
-// ORIGINAL "React.createElement" METHOD USING JAVASCRIPT \\
-
-let e = React.createElement;
+// ADDING PROPS INTO JAVASCRIPT, METHOD 1 \\
 
 export default class Comment extends React.Component {
     render() {
-        return e('div', 
-            {class: 'card w-75'},
-            e('div', {class: 'card-hearder bg-primary text-white'}, 'Username and Time'),
-            e('div', {class: 'card-body'}, 'Comment Content'),
-            e('div', {class: 'card-footer'},
-            e(LikeButtom, {}, null),
-            e('span', {}, ' '),
-            e(ReplyButton, {}, null))
+        return (
+            <div className="card w-75">
+                <div className="card-header bg-primary text-white">
+                    Username and Time
+                </div>
+                <div className="card-body">
+                    {this.props.content} 
+                </div>
+                <div className="card-footer">
+                    <LikeButton />
+                    <ReplyButton />
+                </div>
+            </div>
         );
     }
 }
