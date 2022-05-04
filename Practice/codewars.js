@@ -73,3 +73,6 @@ XO("zzoo") => false
 function XO(str) {
     //code here
 }
+
+var count = [1,,3]
+console.log(count)
