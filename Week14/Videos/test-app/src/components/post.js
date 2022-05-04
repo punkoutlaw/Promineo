@@ -3,6 +3,50 @@ import ReplyButton from './reply-button';
 import LikeButton from './like-button';
 import Comment from './comment';
 
+/*
+
+// MAKING COMPONENTS DYNAMIC BY USING THE "STATE" \\
+
+Please note - you HAVE to include "props" in your constructor, then you can use it inside each component.
+You always need to call the "super" constructor on the 1st line, then pass the props in.
+
+*/
+
+export default class Post extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: props.comments,
+            content: props.content
+        };
+    }
+    render() {
+        let comments = [];
+        if(this.state.comments) {
+            for(let comment of this.state.comments) {
+                comments.push(<Comment {...comment}/>);
+            }
+        }
+        return (
+            <div className='card w-75'>
+                <div className='card-header bg-primary text-white'>
+                    Username and Time
+                </div>
+                    <div className='card-body'>
+                        {this.state.content}
+                    </div>
+                    <div className='card-footer'>
+                        <LikeButton />
+                        <ReplyButton />
+                        {comments}
+                    </div>
+            </div>
+        );
+    }
+}
+
+/*
+
 // ADDING PROPS INTO REACT, METHOD 2 \\
 
 export default class Post extends React.Component {
@@ -41,8 +85,6 @@ export default class Post extends React.Component {
         );
     }
 }
-
-/*
 
 // ADDING PROPS INTO REACT, METHOD 1 \\
 
