@@ -21,6 +21,7 @@ export default class Post extends React.Component {
         };
     }
     render() {
+        this.setState({content: 'state updated'})
         let comments = [];
         if(this.state.comments) {
             for(let comment of this.state.comments) {
