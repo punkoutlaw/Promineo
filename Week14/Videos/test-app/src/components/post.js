@@ -26,8 +26,6 @@ Furthermore, you can add 2nd argument that would update your props.
 
 Example: this.setState((state, props) => ({count: state.count + 1})) which will return the object {}.
 
-*/
-
 export default class Post extends React.Component {
     constructor(props) {
         super(props);
@@ -41,6 +39,43 @@ export default class Post extends React.Component {
         let tempComments = this.state.comments;
         setTimeout(() => this.setState({content: 'state updated', comments: []}, 
         () => setTimeout(() => this.setState({comments: tempComments}), 2000)), 2000);
+        let comments = [];
+        if(this.state.comments) {
+            for(let comment of this.state.comments) {
+                comments.push(<Comment {...comment}/>);
+            }
+        }
+        return (
+            <div className='card w-75'>
+                <div className='card-header bg-primary text-white'>
+                    Username and Time
+                </div>
+                    <div className='card-body'>
+                        {this.state.content}
+                    </div>
+                    <div className='card-footer'>
+                        <LikeButton />
+                        <ReplyButton />
+                        {comments}
+                    </div>
+            </div>
+        );
+    }
+}
+
+*/
+
+export default class Post extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: props.comments,
+            content: props.content,
+            count: 0
+        };
+    }
+    render() {
+        
         let comments = [];
         if(this.state.comments) {
             for(let comment of this.state.comments) {
