@@ -1,0 +1,13 @@
+1) To create a template without having to do everything manually (boilerplate code), run "npx create-react-app test-app".
+
+2) *Note* - in the cmd line, "test-app" will be the name of the directory you are creating!
+
+2) Run "npm start" from the cmd line. It will open up a new window using our localhost, port 3000.
+
+3) To terminate the local host session, press "ctrl + c" and it will ask if you want to "terminate batch job" - type "Y" and hit enter.
+
+4) Use "npm install react-bootstrap bootstrap" to install bootstrap into your React project.
+
+5) To populate your basic component foundation, type "rafce" into your JS file and press enter.
+
+6) import {Navbar, Container} from 'react-bootstrap'
