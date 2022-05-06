@@ -15,7 +15,7 @@ export default class Post extends React.Component {
     }
     render() {
         
-// We will be revsing the if statement to add key values to our props:
+// We will be revising the if statement to add key values to our props:
 
         let comments;
         if(this.state.comments) {
