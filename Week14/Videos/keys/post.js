@@ -15,6 +15,8 @@ export default class Post extends React.Component {
     }
     render() {
         
+// We will be revsing the if statement to add key values to our props:
+
         let comments;
         if(this.state.comments) {
             comments = this.state.comments.map((comment, index) => <Comment key={index} {...comment} />)
