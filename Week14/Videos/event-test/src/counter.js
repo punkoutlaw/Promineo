@@ -1,5 +1,42 @@
 import React from 'react'
 
+/*
+
+We will now learn how to "raise the state" which will entail removing the state from our previous code. 
+It will now be put into our parent component which will maintain the state instead. See below for detail:
+
+*/
+
+class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+   // You would remove any code that references the "state" and replace it with "props".
+
+    handleClick() {
+        this.props.onClick(this.props.name);
+
+    }
+
+    // We need to replace "state with "props" in the code below as well.
+
+    render() {
+        return (
+            <button className="btn btn-primary" onClick={this.handleClick}>
+                {this.props.name} {this.props.count}
+            </button>
+        );
+    }
+}
+
+export default Counter
+
+/* 
+
+In the code below, we set the state in the component. See below for detail.
+
 class Counter extends React.Component {
     constructor(props) {
         super(props);
@@ -26,8 +63,6 @@ class Counter extends React.Component {
     }
 }
 
-/* 
-
 // The follwing method uses an anonymouis function \\
 
     render() {
@@ -38,6 +73,5 @@ class Counter extends React.Component {
         );
     }
 }
-*/
 
-export default Counter
+*/
