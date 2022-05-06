@@ -8,6 +8,6 @@
 
 4) Use "npm install react-bootstrap bootstrap" to install bootstrap into your React project.
 
-5) To populate your basic component foundation, type "rafce" into your JS file and press enter.
+5) To import bootstrap into React add: "import {Navbar, Container} from 'react-bootstrap'" in your React imports.
 
-6) import {Navbar, Container} from 'react-bootstrap'
+6) To populate your basic component foundation, type "rafce" into your JS file and press enter.
