@@ -3,7 +3,15 @@ import ReplyButton from './reply-button';
 import LikeButton from './like-button';
 import Comment from './comment';
 
+/*
+
+ React uses a unique “key” prop on each child of the list to create a relationship between the component and the DOM.
+ This is to ensure that react re-renders the child correctly next time.
+ And so, it’s important to have a unique key assigned to every child of the list.
+
 // ADDING KEY VALUES TO PROPS \\
+
+*/
 
 export default class Post extends React.Component {
     constructor(props) {
@@ -15,7 +23,7 @@ export default class Post extends React.Component {
     }
     render() {
         
-// We will be revising the if statement to add key values to our props:
+// Below we will be revising the if statement to add unique key values to our props:
 
         let comments;
         if(this.state.comments) {
