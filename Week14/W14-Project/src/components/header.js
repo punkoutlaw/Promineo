@@ -6,17 +6,19 @@ class Header extends React.Component {
         return(
             <div className='card-header border border-primary bg-secondary'>
                 <h1>MovieRaters</h1>
-                <Nav justify variant="tabs" defaultActiveKey="/home">
-                    <Nav.Item>
-                        <Nav.Link href="/home">Home</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-1">Movies</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-2">Contact</Nav.Link>
-                    </Nav.Item>
-                </Nav>
+                <div className='card-body bg-light'>
+                    <Nav justify variant="tabs" defaultActiveKey="/home">
+                        <Nav.Item>
+                            <Nav.Link href="/home">Home</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="link-1">Movies</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="link-2">Contact</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                </div>
             </div>
         );
     }
