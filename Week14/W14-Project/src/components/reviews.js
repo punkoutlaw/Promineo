@@ -2,6 +2,7 @@ import React from "react";
 import Stars from "./stars";
 
 const Reviews = () => {
+    const [review, setReview] = useState(null);
   return (
     <div>
     <form className="form-control">
