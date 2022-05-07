@@ -34,7 +34,7 @@ export default Stars
 
 /*
 
-// MIUI STAR RATING \\
+// MUI STAR RATING \\
 
 <div id="rating">
     <Typography component="legend"><b>Rating</b></Typography>
