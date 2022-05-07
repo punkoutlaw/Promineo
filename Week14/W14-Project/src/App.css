@@ -39,6 +39,7 @@
 
 h1 {
   text-align: center;
+  color: white;
 }
 
 h5 {
@@ -52,6 +53,11 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: red;
 }
 
 p {
@@ -62,4 +68,8 @@ p {
   width: 100%;
   height: 25vw;
   object-fit: cover;
+}
+
+#rating {
+  font-family: 'Cooper Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

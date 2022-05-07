@@ -1,10 +1,12 @@
 import React from 'react'
 import { CardGroup, Card } from 'react-bootstrap'
+import MovieForm from './movie-form';
 import Stars from './stars';
 
 class Main extends React.Component {
     render() {
         return(
+            <div className='card-body bg-secondary'>
             <CardGroup>
                 <Card border='primary'>
                     <Card.Img variant="top" src="https://static.free-putlockers.com/dist/images/McpiUC-e_JqUZKWBZZT0GJ7mUQ7KsPfDtKRKQ-tiCPmIuPm9m6bsHaMBPxo-WCAWgbydIVeNpoV9t-w_aME5RLOjJeb6LLXKjbZX3Xiotdyb1nDGfoNftJLgmTnV7_9u.jpg" />
@@ -14,6 +16,7 @@ class Main extends React.Component {
                     <p>Harry Potter finds himself competing in a hazardous tournament between rival schools of magic, but he is distracted by recurring nightmares.</p>
                     </Card.Text>
                     </Card.Body>
+                    <MovieForm />
                     <Card.Footer>
                     <small className="text-muted">2005 • PG-13 • 2h 37m</small>
                     </Card.Footer>
@@ -26,6 +29,7 @@ class Main extends React.Component {
                     <p>In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.{' '}</p>
                     </Card.Text>
                     </Card.Body>
+                    <MovieForm />
                     <Card.Footer>
                     <small className="text-muted">2017 • R • 2h 15m</small>
                     </Card.Footer>
@@ -38,11 +42,13 @@ class Main extends React.Component {
                     <p>A high-school boy in the early 1970s is given the chance to write a story for Rolling Stone magazine about an up-and-coming rock band as he accompanies them on their concert tour.</p>
                     </Card.Text>
                     </Card.Body>
+                    <MovieForm />
                     <Card.Footer>
                     <small className="text-muted">2000 • R • 2h 2m</small>
                     </Card.Footer>
                 </Card>
             </CardGroup>
+            </div>
         );
     }
 }

@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap'
 class Header extends React.Component {
     render() {
         return(
-            <div className='card-header'>
+            <div className='card-header border border-primary bg-secondary'>
                 <h1>MovieRaters</h1>
                 <Nav justify variant="tabs" defaultActiveKey="/home">
                     <Nav.Item>

@@ -3,18 +3,14 @@ import { Rating, Typography } from '@mui/material';
 
 class Stars extends React.Component {
     render() {
+        let setValue = 0;
         return(
-            <div>
-                <Typography component="legend">Controlled</Typography>
-                    <Rating
-                    name="simple-controlled"
-                    value={value}
+            <div id="rating">
+                <Typography component="legend"><b>Rating</b></Typography>
+                    <Rating name="half-rating" defaultValue={1} precision={0.5} 
                     onChange={(event, newValue) => {
                         setValue(newValue);
-                    }}
-                    />
-                    <Typography component="legend">Read only</Typography>
-                    <Rating name="read-only" value={value} readOnly />
+                    }} />
             </div>
         );
     }
