@@ -18,7 +18,7 @@ class Main extends React.Component {
                     </Card.Body>
                     <MovieForm />
                     <Card.Footer>
-                    <small className="text-muted">2005 • PG-13 • 2h 37m</small>
+                    <small className="text text-strong">2005 • PG-13 • 2h 37m</small>
                     </Card.Footer>
                 </Card>
                 <Card border='primary'>
@@ -31,7 +31,7 @@ class Main extends React.Component {
                     </Card.Body>
                     <MovieForm />
                     <Card.Footer>
-                    <small className="text-muted">2017 • R • 2h 15m</small>
+                    <small className="text text-strong">2017 • R • 2h 15m</small>
                     </Card.Footer>
                 </Card>
                 <Card border='primary'>
@@ -44,7 +44,7 @@ class Main extends React.Component {
                     </Card.Body>
                     <MovieForm />
                     <Card.Footer>
-                    <small className="text-muted">2000 • R • 2h 2m</small>
+                    <small className="text text-strong">2000 • R • 2h 2m</small>
                     </Card.Footer>
                 </Card>
             </CardGroup>
