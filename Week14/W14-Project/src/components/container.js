@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './header'
 import Main from './main'
+import ReviewGroup from './reviewgroup'
 import Footer from './footer'
 
 const container = () => {
@@ -9,6 +10,7 @@ const container = () => {
         <br></br>
         <Header />
         <Main />
+        <ReviewGroup />
         <Footer />
         <br></br>
     </div>
