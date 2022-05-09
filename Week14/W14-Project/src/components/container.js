@@ -10,7 +10,6 @@ const container = () => {
         <br></br>
         <Header />
         <Main />
-        <ReviewGroup />
         <Footer />
         <br></br>
     </div>

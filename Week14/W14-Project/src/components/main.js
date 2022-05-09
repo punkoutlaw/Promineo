@@ -1,5 +1,6 @@
 import React from 'react'
 import { CardGroup, Card } from 'react-bootstrap'
+import ReviewGroup from './reviewgroup';
 import Reviews from './reviews';
 
 class Main extends React.Component {
@@ -15,7 +16,7 @@ class Main extends React.Component {
                     <p>Harry Potter finds himself competing in a hazardous tournament between rival schools of magic, but he is distracted by recurring nightmares.</p>
                     </Card.Text>
                     </Card.Body>
-                    <Reviews />
+                    <ReviewGroup />
                     <Card.Footer>
                     <small className="text text-strong">2005 • PG-13 • 2h 37m</small>
                     </Card.Footer>
@@ -28,7 +29,7 @@ class Main extends React.Component {
                     <p>In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.{' '}</p>
                     </Card.Text>
                     </Card.Body>
-                    <Reviews />
+                    <ReviewGroup />
                     <Card.Footer>
                     <small className="text text-strong">2017 • R • 2h 15m</small>
                     </Card.Footer>
@@ -41,7 +42,7 @@ class Main extends React.Component {
                     <p>A high-school boy in the early 1970s is given the chance to write a story for Rolling Stone magazine about an up-and-coming rock band as he accompanies them on their concert tour.</p>
                     </Card.Text>
                     </Card.Body>
-                    <Reviews />
+                    <ReviewGroup />
                     <Card.Footer>
                     <small className="text text-strong">2000 • R • 2h 2m</small>
                     </Card.Footer>

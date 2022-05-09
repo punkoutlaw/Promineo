@@ -22,7 +22,7 @@ class ReviewGroup extends React.Component {
         const postData = {
             review: data
         };
-        axios.post('/api/review/save', postData).then((response) => {
+        axios.post('/api/comment/save', postData).then((response) => {
             // console.log('response', response.data);
             let reviews = this.state.reviews;
             reviews.unshift({
@@ -46,7 +46,7 @@ class ReviewGroup extends React.Component {
     render() {
         return(
             <div>
-                {this.renderReviews()}
+                {/* {this.renderReviews()} */}
                 <Reviews handleReviewSubmit={this.handleReviewSubmit}/>
             </div>
         );
