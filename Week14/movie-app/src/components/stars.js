@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaStar} from 'react-icons/fa'
-import { Rating, Typography } from '@mui/material';
 
 const Stars = () => {
     const [rating, setRating] = useState(0);

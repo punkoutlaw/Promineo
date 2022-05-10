@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './header'
 import Movie from './movie'
 import Footer from './footer'
+import ReviewForm from './reviewform'
 
 const MovieList = () => {
   return (
@@ -9,6 +10,7 @@ const MovieList = () => {
         <br></br>
         <Header name="☆ MovieRaters ☆"/>
         <Movie />
+        <ReviewForm />
         <Footer />
         <br></br>
     </div>
