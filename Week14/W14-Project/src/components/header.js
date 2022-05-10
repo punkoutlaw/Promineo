@@ -5,7 +5,7 @@ class Header extends React.Component {
     render() {
         return(
             <div className='card-header border border-secondary bg-secondary'>
-                <h1>☆ MovieRaters ☆</h1>
+                <h1>{this.props.name}</h1>
                 <div className='card-body border border-secondary bg-light'>
                     <Nav justify variant="tabs" defaultActiveKey="/home">
                         <Nav.Item>

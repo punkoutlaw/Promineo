@@ -9,10 +9,8 @@ class ReviewForm extends React.Component {
         super(props);
 
         this.state = {
-            reviews: [
-                // {id: 1, comment: "The critics are RAVING about this movie!"},
-                // {id: 2, comment: "The blockbuster you've been waiting for!"}
-            ]
+            reviews: [],
+            name: []
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -23,22 +21,23 @@ class ReviewForm extends React.Component {
         this.setState({postTitle: event.target.value});
     }
     handleReviewSubmit = event => {
+        console.log(this.state.postTitle)
         event.preventDefault();
             const post = {
                 postName: this.state.reviews
             };
+            let data = {
+                comment: this.state.postTitle
+            };
         axios.post(
-            'https://jsonplaceholder.typicode.com/posts', {post})
+            'https://jsonplaceholder.typicode.com/comments', data)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-                let reviews = this.state.reviews;
-                reviews.unshift({
-                    id: reviews.length + 1,
-                    comment: res.data.review
-                });
-                this.setState({reviews: reviews});
-            })
+                let reviews = this.state.reviews.slice();
+                reviews.push(res.data)
+                this.setState({reviews: reviews})
+            });
         }
 
     renderReviews() {
@@ -51,8 +50,20 @@ class ReviewForm extends React.Component {
         })
     }
 
+    // renderStars() {
+    //     const { stars } = this.state;
+    //     return stars.map(star => {
+    //         const {id, rating} = star;
+    //         return(
+    //             <Stars key={id} rating={rating}/>
+    //         );
+    //     })
+    // }
+
     render() {
         return(
+            <div>
+            {this.renderReviews()}
         <div className='card'>
             <label>
                 <div className='card-header'>Review Movie</div>
@@ -63,13 +74,14 @@ class ReviewForm extends React.Component {
                 <label>
                 <br></br>
                 <input type="text" name="name" className="form-control"
-                        onChange={this.handleChange} />
+                    placeholder="Write a review" onChange={this.handleChange} />
                 </label>
                 <br></br>
                 <br></br>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
             </div>
+        </div>
         </div>
  )}}
 

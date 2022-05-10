@@ -8,7 +8,7 @@ const MovieList = () => {
   return (
     <div className="container">
         <br></br>
-        <Header />
+        <Header name="☆ MovieRaters ☆"/>
         <Movie />
         <Footer />
         <br></br>
