@@ -50,16 +50,6 @@ class ReviewForm extends React.Component {
         })
     }
 
-    // renderStars() {
-    //     const { stars } = this.state;
-    //     return stars.map(star => {
-    //         const {id, rating} = star;
-    //         return(
-    //             <Stars key={id} rating={rating}/>
-    //         );
-    //     })
-    // }
-
     render() {
         return(
             <div>
