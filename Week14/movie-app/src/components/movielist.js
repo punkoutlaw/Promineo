@@ -3,6 +3,7 @@ import Header from './header'
 import Movie from './movie'
 import Footer from './footer'
 import ReviewForm from './reviewform'
+import Review from './review'
 
 const MovieList = () => {
   return (
@@ -10,7 +11,7 @@ const MovieList = () => {
         <br></br>
         <Header name="☆ MovieRaters ☆"/>
         <Movie />
-        <ReviewForm />
+        <Review />
         <Footer />
         <br></br>
     </div>

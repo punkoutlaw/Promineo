@@ -89,3 +89,50 @@ p {
 #rating {
   font-family: 'Cooper Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/* Reviews */
+
+.card {
+  width: auto;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.card-title {
+  margin-bottom: 20px;
+  font-size: x-large;
+  font-weight: 800;
+  text-align: center;
+}
+.reviews-top {
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+.user-details {
+  align-items: center;
+  display: flex;
+}
+
+.avatar {
+  border-radius: 90px;
+  width: 60px;
+  height: 60px;
+  margin: 2px;
+}
+h6 {
+  font-size: larger;
+  font-weight: 700;
+  margin-right: 10px;
+}
+.reviews-form {
+  padding: 5px;
+  width: 50vw;
+  border-radius: 20px;
+}
+
+.form-container {
+  padding: 20px;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 20px;
+  margin: auto;
+}
