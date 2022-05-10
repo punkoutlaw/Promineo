@@ -1,5 +1,4 @@
 import React from "react";
-import Review from "./review";
 import Stars from "./stars";
 
 class ReviewList extends React.Component {

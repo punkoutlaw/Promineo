@@ -64,6 +64,9 @@ class ReviewForm extends React.Component {
                 <label>
                 <br></br>
                 <input type="text" name="name" className="form-control"
+                    placeholder="Your name" onChange={this.handleChange} />
+                <br></br>
+                <textarea type="text" name="name" className="form-control"
                     placeholder="Write a review" onChange={this.handleChange} />
                 </label>
                 <br></br>

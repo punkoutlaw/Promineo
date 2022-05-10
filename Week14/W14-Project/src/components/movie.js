@@ -3,6 +3,9 @@ import { CardGroup, Card } from 'react-bootstrap'
 import ReviewForm from './reviewform';
 
 class Main extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return(
             <div className='card-body bg-secondary'>
