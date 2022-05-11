@@ -4,9 +4,10 @@ import { FaStar} from 'react-icons/fa'
 const Stars = () => {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(null);
+
     return(
         <div>
-            {[...Array(5)].map((star, i) => {
+            {[...Array(5)].map((_star, i) => {
                 const ratingValue = i + 1;
                 return <label>
                     <input 
@@ -22,7 +23,7 @@ const Stars = () => {
                     onMouseEnter={() => setHover(ratingValue)}
                     onMouseLeave={() => setHover(null)}
                     />
-                        </label>;
+                    </label>;
             })}
             <p>I rate this movie {rating + " stars"}</p>
         </div>
