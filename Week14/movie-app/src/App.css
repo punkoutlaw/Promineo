@@ -81,8 +81,8 @@ p {
 }
 
 .card-img-top {
-  width: auto;
-  height: 25vw;
+  width: 100%!important;
+  height: 25vw!important;
   object-fit: cover;
 }
 

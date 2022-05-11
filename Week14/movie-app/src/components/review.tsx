@@ -20,8 +20,10 @@ function Review({
     return (
       <Card>
         <CardBody>
+          <div className='card-header border border-secondary'>
           <CardTitle tag="h3">Reviews</CardTitle>
-          <div className="reviews-top">
+          </div>
+          <div className="reviews-top border border-secondary">
             <div className="user-details">
               <CardImg className="avatar" src="https://gatewaychamber.com/Content/Uploads/Events/Speakers/speaker-default-image.png" alt={profilePic}/>
               <CardSubtitle className="mb-2 text-muted" tag="h6">
