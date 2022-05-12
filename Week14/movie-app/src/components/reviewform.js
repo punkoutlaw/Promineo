@@ -4,9 +4,9 @@ import Stars from "./stars";
 
 export default function ReviewForm() {
   const [reviews, setReviews] = useState("");
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState([]);
   const [name, setName] = useState("");
-  const [value2, setValue2] = useState("")
+  const [value2, setValue2] = useState([])
   const [star, setStar] = useState();
   const [value3, setValue3] = useState(0)
 
@@ -37,7 +37,7 @@ export default function ReviewForm() {
         <Input
           className="form-control"
           type="textarea"
-          placeholder="Enter you review"
+          placeholder="Enter your review"
           value={reviews}
           onChange={onChange}
         />
@@ -54,9 +54,17 @@ export default function ReviewForm() {
           {value2}
           <br></br>
           <p>{value}</p> 
-          <p>I rate this movie {value3} stars!</p>
+          <p>I rate it this movie {value3} stars!</p>
           </div>
       </Form>
     </div>
   );
 }
+
+/*
+
+       <Button type="submit" className="btn btn-primary" onClick={() => {
+          setValue('');
+        }}>
+
+*/
