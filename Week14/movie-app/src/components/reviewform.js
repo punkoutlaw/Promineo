@@ -5,9 +5,11 @@ import Stars from "./stars";
 export default function ReviewForm() {
   const [reviews, setReviews] = useState("");
   const [value, setValue] = useState("");
+  const [name, setName] = useState("");
   const [value2, setValue2] = useState("")
   const [star, setStar] = useState();
-  const [name, setName] = useState("");
+  const [value3, setValue3] = useState("")
+
   const onChange = (e) => {
     setReviews(e.target.value);
   };
@@ -17,8 +19,9 @@ export default function ReviewForm() {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setValue(reviews);
     setValue2(name)
-    setValue(reviews + " I rate it " + star + " stars ");
+    setValue3(star);
   };
 
   return (
@@ -50,7 +53,8 @@ export default function ReviewForm() {
           <div className="card-body border border-secondary">
           {value2}
           <br></br>
-          <p>{value}</p>
+          <p>{value}</p> 
+          <p>I rate it {value3} stars!</p>
           </div>
       </Form>
     </div>
