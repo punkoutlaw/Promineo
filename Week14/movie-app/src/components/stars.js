@@ -1,43 +1,41 @@
 import React, { useState } from "react";
-import { FaStar} from 'react-icons/fa'
+import { FaStar } from "react-icons/fa";
 
-const Stars = ({ setStar }) => {
-    const [rating, setRating] = useState(0);
-    const [hover, setHover] = useState(null);
-  
-    const handleClick = (ratingValue) => {
-      setRating(ratingValue);
-      setStar(ratingValue);
-    };
-  
-    return (
-      <div>
-        {[...Array(5)].map((star, i) => {
-          const ratingValue = i + 1;
-          return (
-            <label key={i}>
-              <input
-                type="radio"
-                name="rating"
-                value={ratingValue}
-                onClick={() => handleClick(ratingValue)}
-              />
-              <FaStar
-                className="star"
-                color={ratingValue <= (hover || rating) ? "gold" : "lightgray"}
-                size={20}
-                onMouseEnter={() => setHover(ratingValue)}
-                onMouseLeave={() => setHover(null)}
-              />
-            </label>
-          );
-        })}
-        <p>I rate this movie {rating + " stars"}</p>
-      </div>
-    );
+const Stars = ({ setStar, stararr }) => {
+  const [hover, setHover] = useState(null);
+
+  const handleClick = (ratingValue) => {
+    setStar(ratingValue);
   };
-  
-  export default Stars;
+
+  return (
+    <div>
+      {[...Array(5)].map((star, i) => {
+        const stararr = i + 1;
+        return (
+          <label key={i}>
+            <input
+              type="radio"
+              name="rating"
+              value={stararr}
+              onClick={() => handleClick(stararr)}
+            />
+            <FaStar
+              className="star"
+              color={stararr <= (hover || stararr) ? "gold" : "lightgray"}
+              size={20}
+              onMouseEnter={() => setHover(stararr)}
+              onMouseLeave={() => setHover(null)}
+            />
+          </label>
+        );
+      })}
+      <p>I rate this movie {stararr + " stars"}</p>
+    </div>
+  );
+};
+
+export default Stars;
 
 /*
 
