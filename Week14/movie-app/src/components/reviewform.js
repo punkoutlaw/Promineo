@@ -19,11 +19,24 @@ export default function ReviewForm() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setReviewArray(reviewinput);
-    setNameArray(nameinput)
-    setStarInput(starinput);
+    console.log('submitted');
+    if (reviewinput) {
+      reviewarray.push(reviewinput);
+      setReviewArray(reviewarray);
+    }
+    if (nameinput) {
+      namearray.push(nameinput);
+      setNameArray(namearray);
+    }
+    if (starinput) {
+      stararr.push(starinput);
+      setStarArr(stararr);
+    }
+      setReviewInput('');
+      setNameInput('');
+      setStarInput(0)
   };
-
+  console.log(reviewarray);
   return (
     <div className="form-container">
       <Stars setStar={setStarArr} />
@@ -51,9 +64,9 @@ export default function ReviewForm() {
           <h5>Reviews</h5>
           </div>
           <div className="card-body border border-secondary">
-          {namearray}
+          {namearray.map((name, i) => <p key={i}>{name}</p>)}
           <br></br>
-          <p>{reviewarray}</p> 
+          {reviewarray.map((review, i) => <p key={i}>{review}</p>)}
           <p>I rate it this movie {stararr} stars!</p>
           </div>
       </Form>
