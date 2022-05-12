@@ -41,40 +41,6 @@ const Stars = ({ setStar }) => {
 
 /*
 
-import React, { useState } from "react";
-import { FaStar} from 'react-icons/fa'
-
-const Stars = () => {
-    const [rating, setRating] = useState(0);
-    const [hover, setHover] = useState(null);
-
-    return(
-        <div>
-            {[...Array(5)].map((_star, i) => {
-                const ratingValue = i + 1;
-                return <label>
-                    <input 
-                    type="radio" 
-                    name="rating" 
-                    value={ratingValue} 
-                    onClick={() => setRating(ratingValue)}
-                    />
-                    <FaStar 
-                    className="star" 
-                    color={ratingValue <= (hover || rating) ? "gold" : "lightgray"} 
-                    size={20}
-                    onMouseEnter={() => setHover(ratingValue)}
-                    onMouseLeave={() => setHover(null)}
-                    />
-                    </label>;
-            })}
-            <p>I rate this movie {rating + " stars"}</p>
-        </div>
-        );
-};
-
-export default Stars
-
 // MUI STAR RATING \\
 
 <div id="rating">
