@@ -8,7 +8,7 @@ export default function ReviewForm() {
   const [name, setName] = useState("");
   const [value2, setValue2] = useState("")
   const [star, setStar] = useState();
-  const [value3, setValue3] = useState("")
+  const [value3, setValue3] = useState(0)
 
   const onChange = (e) => {
     setReviews(e.target.value);
@@ -54,7 +54,7 @@ export default function ReviewForm() {
           {value2}
           <br></br>
           <p>{value}</p> 
-          <p>I rate it {value3} stars!</p>
+          <p>I rate this movie {value3} stars!</p>
           </div>
       </Form>
     </div>
