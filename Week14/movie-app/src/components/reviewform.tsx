@@ -11,7 +11,6 @@ export default function ReviewForm() {
   const onChange = (e: any) => {
     setReviews(e.target.value);
   };
-
   const onChangeName = (e: any) => {
     setName(e.target.value);
   };

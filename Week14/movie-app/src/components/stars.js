@@ -37,7 +37,7 @@ const Stars = ({ setStar }) => {
     );
   };
   
-export default Stars;
+  export default Stars;
 
 /*
 
