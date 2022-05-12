@@ -3,42 +3,42 @@ import { Button, Form, Input } from "reactstrap";
 import Stars from "./stars";
 
 export default function ReviewForm() {
-  const [reviews, setReviews] = useState("");
-  const [value, setValue] = useState([]);
-  const [name, setName] = useState("");
-  const [value2, setValue2] = useState([])
-  const [star, setStar] = useState();
-  const [value3, setValue3] = useState(0)
+  const [reviewinput, setReviewInput] = useState("");
+  const [reviewarray, setReviewArray] = useState([]);
+  const [nameinput, setNameInput] = useState("");
+  const [namearray, setNameArray] = useState([])
+  const [starinput, setStarInput] = useState();
+  const [stararr, setStarArr] = useState(0)
 
   const onChange = (e) => {
-    setReviews(e.target.value);
+    setReviewInput(e.target.value);
   };
   const onChangeName = (e) => {
-    setName(e.target.value);
+    setNameInput(e.target.value);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setValue(reviews);
-    setValue2(name)
-    setValue3(star);
+    setReviewArray(reviewinput);
+    setNameArray(nameinput)
+    setStarInput(starinput);
   };
 
   return (
     <div className="form-container">
-      <Stars setStar={setStar} />
+      <Stars setStar={setStarArr} />
       <Form onSubmit={onSubmit}>
       <Input
             className="form-control" type="text"
             placeholder="Enter your name"
-            value={name}
+            value={nameinput}
             onChange={onChangeName}
           />
         <Input
           className="form-control"
           type="textarea"
           placeholder="Enter your review"
-          value={reviews}
+          value={reviewinput}
           onChange={onChange}
         />
         <br></br>
@@ -51,10 +51,10 @@ export default function ReviewForm() {
           <h5>Reviews</h5>
           </div>
           <div className="card-body border border-secondary">
-          {value2}
+          {namearray}
           <br></br>
-          <p>{value}</p> 
-          <p>I rate it this movie {value3} stars!</p>
+          <p>{reviewarray}</p> 
+          <p>I rate it this movie {stararr} stars!</p>
           </div>
       </Form>
     </div>
