@@ -37,7 +37,11 @@ export default function ReviewForm() {
   return (
     <div className="form-container">
       <Form onSubmit={onSubmit}>
-        <Stars setStar={setStarArr} stararr={stararr} />
+        <Stars 
+        setStar={setStarArr} 
+        stararr={stararr}
+        required
+        />
         <Input
           className="form-control"
           type="text"

@@ -80,8 +80,20 @@ p {
   font-family:'Candara', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.desc {
+  text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-style:inset;
+}
+
 .card-img-top {
-  width: 100%;
+  width:auto;
   height: 25vw;
   object-fit: cover;
 }
