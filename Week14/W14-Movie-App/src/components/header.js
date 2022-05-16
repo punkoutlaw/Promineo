@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap'
 class Header extends React.Component {
     render() {
         return(
-            <div className='card-header border border-secondary bg-secondary'>
+            <div className='card-header border border-light bg-dark'>
                 <h1>{this.props.name}</h1>
                 <div className='card-body border border-secondary bg-light'>
                     <Nav justify variant="tabs" defaultActiveKey="/home">
@@ -19,7 +19,7 @@ class Header extends React.Component {
                         </Nav.Item>
                     </Nav>
                 </div>
-                <div className='bg-secondary'>
+                <div className='bg-dark'>
                 <br></br>
                     <h2>Now Playing</h2>
                 </div>

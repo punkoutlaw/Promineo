@@ -58,22 +58,24 @@ body {
   background-size: cover;
 }
 
-input[type="radio"] {
-  display: none;
-}
-
-.star {
-  cursor: pointer;
-  transition: color 200ms;
-}
-
 a {
   text-decoration: none;
-  color: white;
 }
 
-a:hover {
-  color:#61dafb;
+a:link {
+  color: #15a2c8;
+}
+
+a:active {
+  color: #000;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:link:hover {
+  color:gold;
 }
 
 p {
@@ -96,6 +98,32 @@ p {
   width:auto;
   height: 25vw;
   object-fit: cover;
+}
+#cd-body {
+  display: block;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#rv-form {
+  display: block;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Stars */
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
 }
 
 #rating {
@@ -145,6 +173,6 @@ h6 {
   padding: 20px;
   background: #ffffff;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 5px;
   margin: auto;
 }

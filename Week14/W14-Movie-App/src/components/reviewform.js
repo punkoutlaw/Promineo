@@ -35,7 +35,7 @@ export default function ReviewForm() {
   };
   console.log(reviewarray);
   return (
-    <div className="form-container">
+    <div className="form-container border border-dark">
       <Form onSubmit={onSubmit}>
         <Stars 
         setStar={setStarArr} 
