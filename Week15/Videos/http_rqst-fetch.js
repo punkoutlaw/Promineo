@@ -1,0 +1,1 @@
+const ENDPOINT = "https://ancient-taiga-31359.herokuapp.com/api/houses";

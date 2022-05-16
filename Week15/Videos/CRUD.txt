@@ -1,0 +1,8 @@
+HTTP Verb Methods
+
+// CRUD \\
+
+Create - POST // A network request to & from a server that will have a payload that has info such as what to create (ex: as user).
+Read - GET - a request for data from a server, not a payload.
+Update - UPDATE - A payload that has info with the information that needs to be updated on an existing resource (such as user/username, password, ect).
+Delete - DELETE is going to delete a resource.
