@@ -1,0 +1,13 @@
+REST - Representational State Transfer
+
+JSON - JavaScript Object Notation
+
+Example of JSON state resource:
+
+Bank Account Resource
+
+{
+    accountNumber: "09986345",
+    balance: 670.34,
+    accountType: "checking"
+}
