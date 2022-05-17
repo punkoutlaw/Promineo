@@ -11,7 +11,7 @@ const FunctionalComponents = () => {
 
 const Person = () => {
     return(
-        <div>
+        <div className='card'>
             <h1>Person Name</h1>
             <h2>Person Age</h2>
         </div>

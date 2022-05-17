@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import NewRoomForm from './new-room-form';
 
 export default class House extends Component {
