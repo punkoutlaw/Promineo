@@ -1,4 +1,5 @@
 import React from 'react'
+import { Card } from 'react-bootstrap';
 
 const FunctionalComponents = () => {
   return (
@@ -11,7 +12,7 @@ const FunctionalComponents = () => {
 
 const Person = () => {
     return(
-        <div className='card'>
+        <div className='card card-body'>
             <h1>Person Name</h1>
             <h2>Person Age</h2>
         </div>
