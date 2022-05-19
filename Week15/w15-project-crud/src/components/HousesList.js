@@ -23,14 +23,19 @@ export class HousesList extends React.Component {
 
   render() {
     return (
-      <div className='house-list'>
-          {this.state.houses.map((house) => (
-              <House
-                house={house}
-                key={house._id}
-                updateHouse={this.updateHouse}
-                />
-          ))}
+      <div>
+        <div className='card-header bg-light' id='house-header'>
+          <h1>My Houses</h1>
+        </div>
+        <div className='card-body bg-secondary' id='house-body'>
+            {this.state.houses.map((house) => (
+                <House
+                  house={house}
+                  key={house._id}
+                  updateHouse={this.updateHouse}
+                  />
+            ))}
+        </div>
       </div>
     )
   }
