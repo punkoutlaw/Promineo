@@ -10,7 +10,7 @@ const Header = () => {
                         <Nav>
                             <NavbarBrand className='p-1' href="/">My Team</NavbarBrand>
                                 <NavItem>
-                                    <Link className='btn btn-primary float-right' to='/add'>Add User</Link>
+                                    <Link className='btn btn-primary float-right' to='/add'>Add Member</Link>
                                 </NavItem>
                         </Nav>
                 </Container>

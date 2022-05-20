@@ -15,10 +15,12 @@
 
 h1 {
   color: white;
+  font-family: 'Copperplate Gothic', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
-  color: black
+  background-image: url("https://purchasegreen.com/wp-content/uploads/2017/02/Optimized-AdobeStock_25094308.jpeg");
+  background-size: cover;
 }
 
 .team-header {

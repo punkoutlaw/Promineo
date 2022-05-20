@@ -12,7 +12,7 @@ function App() {
 
     <div className="App">
         <header className="bg-dark">
-          <h1>Teams</h1>  
+          <h1>Fantasy Football</h1>  
         </header>
         <div className='card-body'>
         <GlobalProvider>
