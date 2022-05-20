@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+#App-header {
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -13,6 +13,24 @@
   color: white;
 }
 
+h1 {
+  color: white;
+}
+
 body {
   color: black
+}
+
+.team-header {
+  text-align: center;
+  height: auto;
+  width: 25%;
+}
+
+.input-form {
+  text-align: left;
+  color: white;
+  height: auto;
+  width: 25%;
+  background-color: gray;
 }
