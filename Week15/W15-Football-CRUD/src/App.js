@@ -20,7 +20,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Main />} />
               <Route path="/Add" element={<AddUser />} />
-              <Route path="/Edit/:id" element={<EditUser />} />
+              <Route path="/Edit/:userId" element={<EditUser />} />
             </Routes>
           </Router>
         </GlobalProvider>
