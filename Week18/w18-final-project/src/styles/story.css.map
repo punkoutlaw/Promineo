@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "story.scss",
+        "_properties.scss"
+    ],
+    "names": [],
+    "file": "story.css"
+}
