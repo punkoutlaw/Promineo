@@ -1,1 +1,27 @@
-/* No CSS *//*# sourceMappingURL=story.css.map */
+.story {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em 0.5em;
+}
+
+.story:first-child {
+  margin-left: 1em;
+}
+
+.story:last-child {
+  margin-right: 1em;
+}
+
+.story .accountName {
+  font-size: 0.65em;
+  margin: 0.4em;
+}
+/*# sourceMappingURL=story.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,YAAY,CAAC;EACT,UAAU,EAAE,MAAM;CAoBrB;;AArBD,AAGI,YAHQ,CAGR,eAAe,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,GAAG;EAChB,KAAK,ECHU,OAAO;EDItB,aAAa,EAAE,MAAM;CAWxB;;AApBL,AAWQ,YAXI,CAGR,eAAe,CAQX,MAAM,CAAC;EACH,SAAS,EAAE,KAAK;CACnB;;AAbT,AAeQ,YAfI,CAGR,eAAe,CAYX,CAAC,CAAC;EACE,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "suggestions.scss",
+        "_properties.scss"
+    ],
+    "names": [],
+    "file": "suggestions.css"
+}

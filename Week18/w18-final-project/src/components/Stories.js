@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/stories.css';
-import HorizontalScroll from 'react-scroll-horizontal';
+// import HorizontalScroll from 'react-horizontal-scroll';
 import Story from './Story';
 
 const Stories = () => {
   return (
     <div className='stories'>
-        <HorizontalScroll className='scroll' reverseScroll={true}>
+        {/* <HorizontalScroll className='scroll' reverseScroll={true}> */}
         <Story />
         <Story />
         <Story />
@@ -17,17 +17,7 @@ const Stories = () => {
         <Story />
         <Story />
         <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        </HorizontalScroll>
+        {/* </HorizontalScroll> */}
     </div>
   )
 }
