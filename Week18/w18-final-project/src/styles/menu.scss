@@ -7,8 +7,12 @@
         width: 23px;
         height: 23px;
 
-        &hover {
+        &:hover {
             cursor: pointer;
         }
+    }
+
+    .profileIcon {
+        margin-top: -3px;
     }
 }

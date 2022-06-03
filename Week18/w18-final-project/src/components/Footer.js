@@ -5,17 +5,17 @@ const Footer = () => {
   return (
     <div className='footer'>
         <ul className='links'>
-            <li>About</li>
-            <li>Help</li>
-            <li>Press</li>
-            <li>API</li>
-            <li>Jobs</li>
-            <li>Privacy</li>
-            <li>Terms</li>
-            <li>Locations</li>
-            <li>Top Accounts</li>
-            <li>Hashtags</li>
-            <li>Language</li>
+            <li><a href='/'>About</a></li>
+            <li><a href='/'>Help</a></li>
+            <li><a href='/'>Press</a></li>
+            <li><a href='/'>API</a></li>
+            <li><a href='/'>Jobs</a></li>
+            <li><a href='/'>Privacy</a></li>
+            <li><a href='/'>Terms</a></li>
+            <li><a href='/'>Locations</a></li>
+            <li><a href='/'>Top Accounts</a></li>
+            <li><a href='/'>Hashtags</a></li>
+            <li><a href='/'>Language</a></li>
         </ul>
         <div className='copyright'>© 2022 INSTAGRAM FROM META</div>
     </div>
