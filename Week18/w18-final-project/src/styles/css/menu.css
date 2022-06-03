@@ -1,0 +1,21 @@
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 1.5em;
+}
+
+.menu .icon {
+  margin-right: 1.5em;
+  width: 23px;
+  height: 23px;
+}
+
+.menu .icon:hover {
+  cursor: pointer;
+}
+
+.menu .profileIcon {
+  margin-top: -3px;
+}
+/*# sourceMappingURL=menu.css.map */

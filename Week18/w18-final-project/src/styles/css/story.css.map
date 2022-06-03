@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACH,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,SAAS;CAcpB;;AAlBD,AAMI,MANE,AAMD,YAAY,CAAC;EACV,WAAW,EAAE,GAAG;CACnB;;AARL,AAUI,MAVE,AAUD,WAAW,CAAC;EACT,YAAY,EAAE,GAAG;CACpB;;AAZL,AAcI,MAdE,CAcF,YAAY,CAAC;EACT,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,KAAK;CAChB",
+    "sources": [
+        "story.scss",
+        "_properties.scss"
+    ],
+    "names": [],
+    "file": "story.css"
+}

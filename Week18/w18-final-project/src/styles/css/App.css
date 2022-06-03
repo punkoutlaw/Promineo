@@ -1,0 +1,42 @@
+body {
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+main {
+  background-color: #fafafa;
+  margin-top: 60px;
+}
+
+main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+a {
+  text-decoration: none;
+  color: #0095f6;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 1024px) {
+  main .container {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACH,KAAK,EAAE,KAAK;CACf;;AAED,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK;EACpC,AAAA,MAAM,CAAC;IACH,KAAK,EAAE,IAAI;GACd",
+    "sources": [
+        "cards.scss",
+        "_properties.scss"
+    ],
+    "names": [],
+    "file": "cards.css"
+}

@@ -1,0 +1,17 @@
+.commentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1.5em;
+  font-size: 0.75em;
+  margin-bottom: 0.4em;
+}
+
+.commentContainer .accountName {
+  font-weight: 600;
+}
+
+.commentContainer .comment {
+  margin-left: 0.5em;
+}
+/*# sourceMappingURL=comment.css.map */
