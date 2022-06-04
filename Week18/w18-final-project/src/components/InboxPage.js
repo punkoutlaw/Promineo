@@ -10,7 +10,6 @@ export default function InboxPage() {
         <Card>
             <Card.Header><h2>Messages</h2></Card.Header>   
             <Card.Body>
-                <Card.Title> Hello </Card.Title>
                 <Card.Text> Let's do this. </Card.Text>
             </Card.Body>
             <Card.Footer> © 2022 INSTAGRAM FROM META </Card.Footer>

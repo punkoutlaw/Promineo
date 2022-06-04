@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/css/App.css'
 import logo from '../images/instagram-logo.png'
-import searchIcon from '../images/searchIcon.png'
 import Menu from './Menu.js';
 
 const Navigation = () => {
