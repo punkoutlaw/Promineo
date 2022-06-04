@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/css/App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from "./Navigation";
 import Cards from './Cards';
 import Sidebar from './Sidebar';
