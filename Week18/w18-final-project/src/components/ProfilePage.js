@@ -2,7 +2,9 @@ import React from 'react'
 
 const ProfilePage = () => {
   return (
-    <div>ProfilePage</div>
+    <main style={{ padding: "1rem 0" }}>
+        <h2>Profile Page</h2>
+    </main>
   )
 }
 
