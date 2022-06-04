@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/profile.css';
+import '../styles/css/profile.css';
 import ProfileIcon from './ProfileIcon';
 import users from '../data/users';
 

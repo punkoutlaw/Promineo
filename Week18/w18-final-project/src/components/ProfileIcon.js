@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/profileIcon.css';
+import '../styles/css/profileIcon.css';
 
 const ProfileIcon = (props) => {
     const { iconSize, storyBorder, image } = props;

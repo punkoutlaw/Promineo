@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/card.css';
+import '../styles/css/card.css';
 import Profile from './Profile';
 import {ReactComponent as CardButton} from '../images/cardbutton.svg';
 import CardMenu from './CardMenu';

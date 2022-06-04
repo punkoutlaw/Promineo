@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/App.css'
+import '../styles/css/App.css'
 import logo from '../images/instagram-logo.png'
 import searchIcon from '../images/searchIcon.png'
 import Menu from './Menu.js';
@@ -9,10 +9,7 @@ const Navigation = () => {
     <div className='navigation'>
         <div className='container'>
             <img className='logo' src={logo} alt='instagram logo'/>
-            <div className='search'>
-                <img className="searchIcon" src={searchIcon} alt='search icon'/>
-                <span className='searchText'>Search</span>
-            </div>
+              <input type='text' placeholder='Search' className='search'></input>
             <Menu />
         </div>
     </div>

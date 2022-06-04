@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/App.css'
+import '../styles/css/App.css'
 import Navigation from "./Navigation";
 import Cards from './Cards';
 import Sidebar from './Sidebar';

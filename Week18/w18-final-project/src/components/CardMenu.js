@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/cardMenu.css';
+import '../styles/css/cardMenu.css';
 import { ReactComponent as Share } from '../images/share.svg';
 import { ReactComponent as Comments } from '../images/comments.svg';
 import { ReactComponent as Notifications } from '../images/notifications.svg';

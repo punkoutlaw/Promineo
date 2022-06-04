@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/suggestions.css';
+import '../styles/css/suggestions.css';
 import Profile from './Profile';
 
 

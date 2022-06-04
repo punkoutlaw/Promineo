@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/cards.css';
+import '../styles/css/cards.css';
 import Stories from './Stories';
 import Card from './Card';
 
@@ -46,7 +46,7 @@ const Cards = () => {
         <Card 
           accountName='shoon' 
           storyBorder={true} 
-          image='https://picsum.photos/800/1000' 
+          image='https://picsum.photos/800/500' 
           comments={commentsOne} 
           likedByText='gharrison' 
           likedByNumber={87} 
@@ -54,7 +54,7 @@ const Cards = () => {
            <Card 
           accountName='tpetty' 
           storyBorder={true} 
-          image='https://picsum.photos/800/900' 
+          image='https://picsum.photos/700/500' 
           comments={commentsTwo} 
           likedByText='jlennon' 
           likedByNumber={100} 
@@ -62,7 +62,7 @@ const Cards = () => {
            <Card 
           accountName='mjackson' 
           storyBorder={true} 
-          image='https://picsum.photos/800/500' 
+          image='https://picsum.photos/600/500' 
           comments={commentsThree} 
           likedByText='mmonroe' 
           likedByNumber={200} 
