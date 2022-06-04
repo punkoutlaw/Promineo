@@ -11,7 +11,7 @@ class Messages extends Component {
       title: 'Messages',
       act: 0,
       index: '',
-      datas: []
+      entries: []
     }
   } 
 
@@ -19,11 +19,10 @@ class Messages extends Component {
     this.refs.name.focus();
   }
 
-  fSubmit = (e) =>{
+  Submit = (e) =>{
     e.preventDefault();
-    console.log('try');
 
-    let datas = this.state.datas;
+    let entries = this.state.entries;
     let name = this.refs.name.value;
     let address = this.refs.address.value;
 
@@ -31,15 +30,15 @@ class Messages extends Component {
       let data = {
         name, address
       }
-      datas.push(data);
+      entries.push(data);
     }else{                      //update
       let index = this.state.index;
-      datas[index].name = name;
-      datas[index].address = address;
+      entries[index].name = name;
+      entries[index].address = address;
     }    
 
     this.setState({
-      datas: datas,
+      entries: entries,
       act: 0
     });
 
@@ -47,19 +46,19 @@ class Messages extends Component {
     this.refs.name.focus();
   }
 
-  fRemove = (i) => {
-    let datas = this.state.datas;
-    datas.splice(i,1);
+  Remove = (i) => {
+    let entries = this.state.entries;
+    entries.splice(i,1);
     this.setState({
-      datas: datas
+      entries: entries
     });
 
     this.refs.myForm.reset();
     this.refs.name.focus();
   }
 
-  fEdit = (i) => {
-    let data = this.state.datas[i];
+  Edit = (i) => {
+    let data = this.state.entries[i];
     this.refs.name.value = data.name;
     this.refs.address.value = data.address;
 
@@ -72,7 +71,7 @@ class Messages extends Component {
   }  
 
   render() {
-    let datas = this.state.datas;
+    let entries = this.state.entries;
     return (
       <div>
         <Navigation />
@@ -80,20 +79,25 @@ class Messages extends Component {
           <Card>
           <Card.Header><strong>{this.state.title}</strong></Card.Header>
           <Card.Body>
-        <form ref="myForm" className="myForm">
-          <input type="text" ref="name" placeholder="Your Name" className="formField" />
-          <input type="text" ref="address" placeholder="Your Message" className="formField" />
-          <button onClick={(e)=>this.fSubmit(e)} className="myButton">submit </button>
-        </form>
-        <pre>
-          {datas.map((data, i) =>
-            <li key={i} className="form-control bg-light">
-              {i+1}. {data.name}, {data.address}
-              <button onClick={()=>this.fRemove(i)} className="myListButton">Delete </button>
-              <button onClick={()=>this.fEdit(i)} className="myListButton">Edit </button>
-            </li>
-          )}
-        </pre>
+            <Card.Title>New Message</Card.Title>
+              <form ref="myForm" className="form-control">
+                <input type="text" ref="name" placeholder="Name" className="form-control" />
+                <br></br>
+                <textarea type="text" ref="address" placeholder="Message" className="form-control" />
+                <br></br>
+                <button onClick={(e)=>this.Submit(e)} className="btn btn-primary"> Send </button>
+              </form>
+              <br></br>
+              <pre>
+                {entries.map((data, i) =>
+                  <li key={i} className="form-control bg-light">
+                    {i+1}. {data.name}: {data.address}
+                    <br></br>
+                    <button onClick={()=>this.Edit(i)} className="btn btn-warning"> Edit </button>
+                    <button onClick={()=>this.Remove(i)} className="btn btn-danger"> Delete </button>
+                  </li>
+                )}
+              </pre>
         </Card.Body>
         <Card.Footer> © 2022 INSTAGRAM FROM META </Card.Footer>
         </Card>
