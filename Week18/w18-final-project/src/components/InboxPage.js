@@ -26,12 +26,12 @@ class Messages extends Component {
     let name = this.refs.name.value;
     let address = this.refs.address.value;
 
-    if(this.state.act === 0){   //new
+    if(this.state.act === 0){   // CREATE
       let data = {
         name, address
       }
       entries.push(data);
-    }else{                      //update
+    }else{                      // UPDATE
       let index = this.state.index;
       entries[index].name = name;
       entries[index].address = address;
@@ -46,7 +46,7 @@ class Messages extends Component {
     this.refs.name.focus();
   }
 
-  Remove = (i) => {
+  Remove = (i) => { // DELETE
     let entries = this.state.entries;
     entries.splice(i,1);
     this.setState({
@@ -57,7 +57,7 @@ class Messages extends Component {
     this.refs.name.focus();
   }
 
-  Edit = (i) => {
+  Edit = (i) => { // EDIT
     let data = this.state.entries[i];
     this.refs.name.value = data.name;
     this.refs.address.value = data.address;
