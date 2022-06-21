@@ -1,0 +1,21 @@
+<!-- <div class="toast show">
+<div class="toast-header bg-light">
+    Thank you for visiting!
+    <div class="toast-button">
+    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+    </div>
+</div>
+<div class="toast-body">
+    <i>Don't forget to join our mailing list!</i>
+</div>
+</div>
+
+<script>
+document.getElementById("toastbtn").onclick = function() {
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    var toastList = toastElList.map(function(toastEl) {
+    return new bootstrap.Toast(toastEl)
+    })
+    toastList.forEach(toast => toast.show())
+}
+</script> -->

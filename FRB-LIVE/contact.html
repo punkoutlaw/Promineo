@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/custom.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Videos</title>
+    <link rel="icon" type="image/x-icon" href="./Images/feudale-symbol-favi.ico">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="nav-logo">
+        <a class="navbar-brand" href="index.html"><img src="./Images/feudale-symbol-c.png" alt="FEUDALE"></a>
+      </div>
+      <div class="nav-button">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <a class="nav-name" href="index.html">FEUDALE</a>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="music.html">Music</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pictures.html">Pictures</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="videos.html">Videos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          </ul>
+        <span class="navbar-text">
+          <b>NEW JERSEY'S PREMIERE ROCK BAND</b>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="parent">
+
+    <div class="container">
+
+      <br>
+    
+    <div class="div3">
+      <div class="card-header bg-dark">
+        <h2>Contact</h2>
+      </div>
+
+      <br>
+
+      <div class="card-body">
+
+        <div class="col-12">
+          <br><br>
+          <img src="./Images/FEUDALE_edit2.png" class="contact-photo" alt="BAND PHOTO">
+        </div>
+
+        <div class="row">
+          <div class="col-9" id="contact-icons">
+            <br>
+              <p><img src="./Images/telephone-icon4.png" alt="telephone icon" width="40px"> Telephone: 732-239-9908 </p>
+              <p><img src="./Images/email-icon.png" alt="email icon" width="40px"> Email: info@feudalerockband.com </p>
+                <br>
+              <p>Send inquiries below.</p>
+            </div>
+            <br>
+            <form action="mailto:info@feudalerockband.com?subject=New Inquiry" 
+            method="POST"
+            enctype="text/plain"
+            name="EmailForm">
+                <div class="col-8">
+                  <div class="input-text">
+                    <div class="input-headers">
+                      <span class="input-text">First Name</span>
+                        <input type="text" name="First Name" aria-label="First name" class="form-control" autocomplete="off">
+                      <span class="input-text">Last Name</span>
+                        <input type="text" name="Last Name" aria-label="Last name" class="form-control" autocomplete="off">
+                          <label for="Email" class="form-label">Email address</label>
+                        <input type="text" name="Email" class="form-control" id="Email" aria-describedby="emailHelp" autocomplete="off">
+                      <div id="emailHelp" class="form-text"></div>
+                        <p id="email-message">We will never share your email - your privacy matters to us!</p>
+                        <label for="textarea">Message</label>
+                        <textarea 
+                          type="text" 
+                          id="textarea" 
+                          name="Message" 
+                          class="form-control" 
+                          placeholder="Your message" 
+                          rows="3"></textarea>
+                        <br>
+                      <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+                      <br><br>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<div class="socials">
+  <div class="col">
+      <a href="https://facebook.com/feudalerockband" class="fa fa-facebook fa-stack fa-2x" title="Facebook Icon"></a>
+      <a href="https://twitter.com/feudalerockband" class="fa fa-twitter fa-stack fa-2x" title="Twitter Icon"></a>
+      <a href="https://instagram.com/feudalerockband" class="fa fa-instagram fa-stack fa-2x" title="Instagram Icon"></a>
+      <a href="https://www.youtube.com/channel/UCtEnhVXu10cy81mSURRxJhQ" class="fa fa-youtube fa-stack fa-2x" title="YouTube Icon"></a>
+  </div>
+</div>
+
+  <footer>
+    <div class="card-footer-fluid bg-dark">
+      <p><strong> © 2022 FEUDALE </strong></p>
+    </div>
+  </footer>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</body>
+</html>

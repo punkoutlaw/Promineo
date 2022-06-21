@@ -1,0 +1,704 @@
+/* MAIN STYLING */
+
+::-webkit-scrollbar{
+  height: 8px;
+  width: 8px;
+  background: rgb(33, 37, 41);
+}
+::-webkit-scrollbar-thumb:horizontal{
+  background: #000;
+  border-radius: 5px;
+}
+
+.navbar {
+  font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;
+  font-weight: 500;
+  background-image: linear-gradient(#6c757d, rgb(19, 18, 18));
+}
+
+.navbar-brand {
+    font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif, 'Fantasy',Copperplate Gothic Bold;
+    font-size: xx-large;
+}
+
+.navbar-text {
+  font-family: 'Copperplate Gothic';
+}
+
+.nav-name {
+  -webkit-transition: color 3s;
+  -moz-transition: color 3s;
+  -o-transition: color 3s;
+  transition: color 3s;
+  color: white;
+  font-size: xx-large;
+  padding-right: 10px;
+  text-decoration:none;
+}
+
+.nav-name:hover {
+  color:rgb(204, 181, 65)
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  font-weight: 100;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1.5rem;
+    font-weight: bold;
+}
+
+h1 {
+    color:azure;
+    text-align: center;
+    font-family: 'fantasy', 'impact';
+    font-size: 75px;
+}
+
+h2 {
+    color:azure;
+    text-align: center;
+    font-family: fantasy, 'impact';
+    font-size: 50px;
+}
+
+h3 {
+    color:azure;
+    text-align: center;
+    font-family: fantasy, impact;
+    font-size: 30px;
+}
+
+.parent {
+  height:fit-content;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  /* border: 1px solid;
+  border-color: #fff;
+  border-radius: 4px;
+  padding: 25px; */
+  background-color: black;
+}
+
+div {
+    color: white;
+    border-style: none; 
+    border-color: rgb(255, 255, 255); 
+    border-radius: 5px;
+    text-align: center;
+}
+
+.div2 {
+    padding: 10px;
+    background-color: rgb(108,117,125);
+    background-image: -moz-linear-gradient(#6c757d, rgb(19, 18, 18));
+    background-image: -webkit-linear-gradient(#6c757d, rgb(19, 18, 18));
+    background-image: -o-linear-gradient(#6c757d, rgb(19, 18, 18));
+    background-image: linear-gradient(#6c757d, rgb(19, 18, 18));
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    word-wrap: break-word;
+    min-height: 450px;
+}
+
+.div3 {
+  text-align: left;
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-color: #000;
+  /* background-color: gray-600; */
+  background-image: -moz-linear-gradient(#6c757d, rgb(19, 18, 18));
+  background-image: -webkit-linear-gradient(#6c757d, rgb(19, 18, 18));
+  background-image: -o-linear-gradient(#6c757d, rgb(19, 18, 18));
+  background-image: linear-gradient(#6c757d, rgb(19, 18, 18));
+}
+
+.div4 {
+    background-color:black; 
+    text-align: center;
+    border-style:ridge;
+    border-color: white;
+}
+
+#img-main {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  height: 600px; 
+  width: 600px; 
+  object-fit: cover;
+}
+
+.table {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toast {
+  position: absolute;
+  top: 1140px;
+  right: 10px;
+  font-size: medium;
+  background-color: dimgray;
+}
+
+.toast-button {
+  margin-top: 8px;
+  margin-right: 10px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+/* NEWSLETTER FORM */
+
+.main {
+  align-items: center;
+  margin: auto;
+  width: 25rem;
+  height: 5rem;
+  padding: 12px;
+  background-color: rgb(108,117,125);
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: width .6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.main>#singular-form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(108,117,125);
+}
+.main>#singular-form button {
+  width: 9rem;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+.main>#singular-form>#subs {
+  padding: 0;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  z-index: 3;
+}
+.main>#singular-form>#email-input {
+  z-index: 2;
+}
+.main>#singular-form>#email-input>input {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding: 0 26% 0 3%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .6s ease .4s;
+}
+.main>#singular-form>#email-input>button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgb(13, 110, 253);
+  color: white;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .6s ease .4s;
+}
+.main>#singular-form>#success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+}
+.main>#singular-form>#subs,
+.main>#singular-form>#email-input,
+.main>#singular-form>#success {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  opacity: 0;
+}
+.main>#singular-form>#subs {
+  transition: all .6s ease;
+}
+.main>#singular-form>#email-input {
+  transform: scale(1);
+  opacity: 1;
+  transition: all .6s ease .4s;
+}
+
+.main>#singular-form>#success {
+  transition: all .2s ease .6s;
+}
+.main>#singular-form>#subs.shown,
+.main>#singular-form>#email-input.shown,
+.main>#singular-form>#success.shown,
+.main>#singular-form>#email-input>button.shown,
+.main>#singular-form>#email-input>input.shown {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* EMAIL FORM */
+
+.form-control {
+  border-style: none;
+  color: black;
+}
+
+input[type="text"], text {
+  background-color : white; 
+  color: black;
+}
+
+#textarea {
+  color: black;
+  background-color: white;
+}
+
+.contact {
+  color:white;
+  text-align: left;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+}
+
+#contact-icons {
+  text-align: left;
+}
+
+.input-headers {
+  text-align: left;
+}
+
+.contact-photo {
+  float:right;
+  border: 1px solid #222; /* Thumbnail border color */
+  border-radius: 4px;  /* Thumbnail border */
+  padding: 4px; /* Thumbnail padding */
+  width: 500px; /* Thumbnail width */
+  margin-left: auto;
+  margin-right: 15px;
+  display:block;
+  border-style: solid;
+  border-color: black;
+}
+
+#email-message {
+  font-size: medium;
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  text-align: center;
+}
+
+/* GALLERY */
+
+#gallery {
+  border-style: none;
+  border-color: white;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.gallery-image {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-image:hover {
+  position:relative;
+  object-fit:fill;
+  display:flex;
+  z-index:auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+.carousel {
+  border-style: none;
+  border-color: white;
+  border-width: 1px;
+}
+
+.carousel-indicators {
+  align-items: center;
+  margin-bottom: auto;
+}
+
+/* VIDEOS */
+
+.videos {
+  overflow: hidden;
+  background-image: linear-gradient(#6c757d, rgb(19, 18, 18));
+}
+
+.iframes {
+  width:420px;
+  height:315px;
+}
+
+/* INSTAGRAM FEED */
+
+.instagram_feed {
+  overflow:hidden;
+}
+
+#instagram-feed1 {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
+  margin: 5em;
+}
+
+.instagram_feed .instagram_new {
+  width:25%;
+  float:left;
+  padding:0 5px 5px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+  
+.instagram_feed img.insta-image {
+  position:absolute;
+  left:0;
+  top:0;
+  object-fit: cover;
+  width:100%;
+  height:100%;
+  -webkit-transition:all 0.3s ease0s;
+  -moz-transition:all 0.3s ease0s;
+  -ms-transition:all 0.3s ease0s;
+  -o-transition:all 0.3s ease0s;
+  transition:all 0.3s ease0s;
+}
+  
+.instagram_feed .insta-link {
+  position:relative;
+  display:block;
+  background:#232323;
+  padding-top:100%;
+}
+
+.instagram_feed .insta-link:hover .insta-image {
+  opacity: 100;
+  position: relative;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  display:block;
+  z-index:999;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 5px;
+}   
+  
+/* SOCIAL ICON STYLING */
+
+.socials {
+  width: 100%;
+  min-height: 15vh;
+  background: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.fa {
+  text-decoration: none;
+}
+
+/* Hover Effect */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+  background: none;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: none;
+  color: white;
+}
+/* Instagram */
+.fa-instagram {
+    background: none;
+    color: white;
+}
+/* YouTube */
+.fa-youtube {
+    background: none;
+    color: white;
+}
+
+@media only screen and (max-width: 480px)  {
+
+    /* MAIN STYLING */
+    
+  .navbar {
+    margin-top: -5px;
+  }  
+    
+  .navbar-brand {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+  }
+  
+   .nav-name {
+    margin-top: -50px;
+  }
+  
+    .nav-logo {
+    align-self: flex-start;
+  }
+
+  .navbar-toggler {
+    margin-top: -50px;
+  }
+
+  .nav-button {
+    align-self: flex-end;
+    margin-top: -50px;
+  }
+  
+  body {
+    font-family: Baskerville;
+  }
+  
+  .card-header {
+    font-family: Roboto;
+    }
+    
+    h2 {
+        font-family: Roboto;
+    }
+    
+    h3 {
+        font-family: Baskerville;
+    }
+
+  div {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .div2 {
+    flex-direction: column;
+    word-wrap: break-word;
+  }
+  
+  .div4 {
+    flex-direction: column;
+  }
+
+  .card-body {
+    flex-direction: column;
+  }
+  
+  .main {
+    max-width: 350px;
+    margin: auto;
+  }
+
+  .parent {
+    flex-direction: column;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  #img-main {
+    padding: 5px;
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover;
+  }
+  
+    .socials {
+    width: 100%;
+  }
+  
+    /* CONTACT PAGE */
+  
+    .div3 {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: large;
+  }
+
+  .contact-photo {
+    width: 100%;
+    height: 100%;
+    float: left;
+    object-fit: cover;
+    display: block;
+  }
+
+  .contact {
+    word-wrap: break-word;
+    font-size: large;
+    font-family: Baskerville;
+  }
+  
+  .form-control {
+    width: auto;
+  }
+  
+  /* PICTURES PAGE */
+
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position:relative;
+  }
+
+  .gallery-image:hover {
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+
+  .carousel {
+    border-style: none;
+    border-color: white;
+    border-width: 1px;
+  }
+  
+    .carousel-indicators {
+    align-items: flex-end;
+    margin-right: -22px;
+  }
+  
+  /* INSTAGRAM FEED */
+  
+      .instagram_feed {
+      overflow:hidden;
+    }
+    
+    #instagram-feed1 {
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+      width: auto;
+      margin: 3em;
+    }
+
+  .instagram_feed .instagram_new {
+    width: 150px;
+    height: 150px;
+  }
+
+  .instagram_feed img.insta-image {
+    position:absolute;
+    left:0;
+    top:0;
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    -o-transition:all 0.3s ease0s;
+    -ms-transition:all 0.3s ease0s;
+    -moz-transition:all 0.3s ease0s;
+    -webkit-transition:all 0.3s ease0s;
+    transition:all 0.3s ease0s; 
+  }
+  
+   .instagram_feed .insta-link:hover .insta-image {
+    opacity: 100;
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:block;
+    z-index:999;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+  
+  /* VIDEOS PAGE */
+
+  .videos {
+    overflow: hidden;
+  }
+
+  .iframes {
+    width: auto;
+    height: auto;
+  }
+
+}
